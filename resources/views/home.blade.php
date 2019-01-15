@@ -57,12 +57,12 @@
                         id: "Đại số",
                         text: "Đại số",
                         level: 0,
-                        leaf: "false"
+                        "disabled": true
                     },{
                         id: "Chương 1 - Đại số",
                         text: "Chương 1 - Đại số",
                         level: 1,
-                        leaf: "false"
+                    "disabled": true
                     },{
                         id: "§1. Căn bậc hai",
                         text: "§1. Căn bậc hai",
@@ -99,7 +99,7 @@
                     id: "Chương 2 - Đại số",
                         text: "Chương 2 - Đại số",
                         level: 1,
-                        leaf: "false"
+                    "disabled": true
                     },{
                     id: "§1. Nhắc lại, bổ sung các khái niệm về hàm số",
                         text: "§1. Nhắc lại, bổ sung các khái niệm về hàm số",
@@ -124,7 +124,7 @@
                     id: "Chương 3 - Đại số",
                         text: "Chương 3 - Đại số",
                         level: 1,
-                        leaf: "false"
+                    "disabled": true
                     },{
                     id: "§1. Phương trình bậc nhất hai ẩn",
                         text: "§1. Phương trình bậc nhất hai ẩn",
@@ -153,7 +153,7 @@
                     id: "Chương 4 - Đại số",
                         text: "Chương 4 - Đại số",
                         level: 1,
-                        leaf: "false"
+                    "disabled": true
                     },{
                     id: "§1. Hàm số y = ax2 (a #0)",
                         text: "§1. Hàm số y = ax2 (a #0)",
@@ -190,12 +190,12 @@
                     id: "Hình học",
                         text: "Hình học",
                         level: 0,
-                        leaf: "false"
+                    "disabled": true
                     },{
                     id: "Chương 1 - Hình học",
                         text: "Chương 1 - Hình học",
                         level: 1,
-                        leaf: "false"
+                    "disabled": true
                     },{
                     id: "§1. Một số hệ thức về đường cao trong tam giác vuông",
                         text: "§1. Một số hệ thức về đường cao trong tam giác vuông",
@@ -228,7 +228,7 @@
                     id: "Chương 2 - Hình học",
                         text: "Chương 2 - Hình học",
                         level: 1,
-                        leaf: "false"
+                    "disabled": true
                     },{
                     id: "§1. Sự xác định của đường tròn.. T/C…",
                         text: "§1. Sự xác định của đường tròn.. T/C…",
@@ -261,7 +261,7 @@
                     id: "Chương 3 - Hình học",
                         text: "Chương 3 - Hình học",
                         level: 1,
-                        leaf: "false"
+                    "disabled": true
                     },{
                     id: "§1. Góc ở tâm.Số đo cung",
                         text: "§1. Góc ở tâm.Số đo cung",
@@ -306,7 +306,7 @@
                     id: "Chương 4 - Hình học",
                         text: "Chương 4 - Hình học",
                         level: 1,
-                        leaf: "false"
+                    "disabled": true
                     },{
                     id: "§1. Hình trụ, diện tích xung quanh và….",
                         text: "§1. Hình trụ, diện tích xung quanh và….",
@@ -327,23 +327,26 @@
                 {
                     id: "Trong chương trình",
                     text: "Trong chương trình",
-                    level: 0
+                    level: 0,
+                    "disabled": true
                 },{
-                    id: "2SGK",
+                    id: "SGK",
                     text: "SGK",
                     level: 1
                 },{
-                    id: "3SBT",
+                    id: "SBT",
                     text: "SBT",
                     level: 1
                 },{
                     id: "Ngoài chương trình",
                     text: "Ngoài chương trình",
-                    level: 0
+                    level: 0,
+                    "disabled": true
                 },{
                     id: "Độ khó tương đương trên lớp",
                     text: "Độ khó tương đương trên lớp",
-                    level: 1
+                    level: 1,
+                    "disabled": true
                 },{
                     id: "Cô giao - Trên lớp",
                     text: "Cô giao - Trên lớp",
@@ -359,7 +362,8 @@
                 },{
                     id: "Nâng cao cho hệ thường",
                     text: "Nâng cao cho hệ thường",
-                    level: 1
+                    level: 1,
+                    "disabled": true
                 },{
                     id: "Cô giao - Nâng cao thường",
                     text: "Cô giao - Nâng cao thường",
@@ -369,13 +373,14 @@
                     text: "Trung tâm học thêm - Nâng cao thường",
                     level: 2
                 },{
-                    id: "1Sách tham khảo mua về - Nâng cao thường2",
+                    id: "Sách tham khảo mua về - Nâng cao thường2",
                     text: "Sách tham khảo mua về - Nâng cao thường",
                     level: 2
                 },{
                     id: "Hệ chuyên",
                     text: "Hệ chuyên",
-                    level: 1
+                    level: 1,
+                    "disabled": true
                 },{
                     id: "Lò luyện",
                     text: "Lò luyện",
