@@ -22,15 +22,24 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $files = glob(base_path('app_vo').'/*');
+        $user = Auth::user();
+
+        if(!$user) return redirect(route('login'));
+
+        $type = 'app_vo';
+        if($request->has('type')){
+            $type = $request->get('type');
+        }
+
+        $files = glob("/var/www/html/$type/*");
 
         $chuong_trinh = config('chuong_trinh');
         $khu_vuc = config('khu_vuc');
 
         $files = array_map(function($file){
-            return str_ireplace('/Applications/MAMP/htdocs', 'http://localhost', $file);
+            return str_ireplace('/var/www/html', 'http://pro.data.giaingay.io', $file);
         }, $files);
 
         return view('home', [
@@ -50,13 +59,22 @@ class HomeController extends Controller
         $src = $request->src;
 
         try{
-            \DB::table('check_image')
-                ->insert([
-                    'chuong_trinh' => $chuong_trinh,
-                    'khu_vuc' => $khu_vuc,
-                    'src' => $src,
-                    'user_id' => $user->id
-                ]);
+            if(\DB::table('check_image')->where('src', $src)->where('user_id', $user->id)->count() > 0){
+                \DB::table('check_image')->where('src', $src)->where('user_id', $user->id)
+                    ->update([
+                        'chuong_trinh' => $chuong_trinh,
+                        'khu_vuc' => $khu_vuc,
+                    ]);
+            }else{
+                \DB::table('check_image')
+                    ->insert([
+                        'chuong_trinh' => $chuong_trinh,
+                        'khu_vuc' => $khu_vuc,
+                        'src' => $src,
+                        'user_id' => $user->id
+                    ]);
+            }
+
             return 'true';
 
         }catch (\Exception $e){
