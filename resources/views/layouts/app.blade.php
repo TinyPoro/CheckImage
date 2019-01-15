@@ -38,7 +38,9 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        &nbsp;<a class="navbar-brand" href="{{ route('report') }}">
+                            Báo cáo
+                        </a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

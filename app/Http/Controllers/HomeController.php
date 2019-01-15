@@ -82,4 +82,8 @@ class HomeController extends Controller
         }
 
     }
+
+    public function report(Request $request){
+        return view('report');
+    }
 }
