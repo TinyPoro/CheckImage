@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    //GOOGLE API
+    'google' => [
+        'client_id'     => env('GOOGLE_CLIENT_ID','1076010884656-sjoelcc4p9teqit0l6d65s9ld2jg7esh.apps.googleusercontent.com'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET','Sy0KfRpN4HFZcckoIjDlTNWA'),
+        'redirect'      => env('GOOGLE_REDIRECT','http://127.0.0.1/CheckImage/public/app/google/callback'),
+    ],
 ];
