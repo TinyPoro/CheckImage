@@ -29,7 +29,7 @@ class HomeController extends Controller
 
         if (!$user) return redirect(route('login'));
 
-        $type = 'app_vo';
+        $type = 'app_giai_ngay';
         if ($request->has('type')) {
             $type = $request->get('type');
         }
