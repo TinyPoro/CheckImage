@@ -6,8 +6,8 @@
         <div class="col-md-2">
             <div class="wrap">
                 <div class="owl-carousel">
-                    @foreach($files as $file)
-                        <img src="{{$file}}" style="width: 100%;height: 100%">
+                    @foreach($files as $k => $file)
+                        <img id="{{$k}}" src="{{$file}}" style="width: 100%;height: 100%">
                     @endforeach
 
                 </div>
@@ -395,6 +395,13 @@
                     data: data,
                     success: function(result){
                         console.log(result);
+
+                        if(result === 'true') {
+                            $('.owl-item img[src="'+src+'"]').remove();
+
+                            alert('Lưu thành công!');
+                        }
+                        else alert('Có lỗi xảy ra!');
                         // setTimeout(function() {
                         //     window.location.reload();
                         // }, 500);
