@@ -27,3 +27,13 @@
     height: 100%;
     z-index: 98;
 }
+
+.tab1{
+    position: relative;
+    left: 3rem;
+}
+
+.tab{
+    position: relative;
+    left: 6rem;
+}

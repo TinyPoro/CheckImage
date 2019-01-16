@@ -56,193 +56,193 @@
             <div class="radio">
                 <label><input type="radio" name="chuong_trinh" disabled value="Đại số">Đại số</label>
             </div>
-            <div class="radio">
+            <div class="radio tab1">
                 <label><input type="radio" name="chuong_trinh" disabled value="Chương 1 - Đại số">Chương 1 - Đại số</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" checked value="§1. Căn bậc hai">§1. Căn bậc hai</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§2. Căn thức bậc hai và HĐT">§2. Căn thức bậc hai và HĐT</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§3. Liên hệ giữa phép nhân và phép khai phương">§3. Liên hệ giữa phép nhân và phép khai phương</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§4. Liên hệ giữa phép chia và phép khai phương">§4. Liên hệ giữa phép chia và phép khai phương</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§6. Biến đổi đơn giản biểu thức chứa căn bậc 2">§6. Biến đổi đơn giản biểu thức chứa căn bậc 2</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§7. Biến đổi đơn giản biểu thức chứa căn bậc 2. (tiếp)">§7. Biến đổi đơn giản biểu thức chứa căn bậc 2. (tiếp)</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§8. Rút gọn biểu thức chứa căn bậc hai">§8. Rút gọn biểu thức chứa căn bậc hai</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§9. Căn bậc ba">§9. Căn bậc ba</label>
             </div>
-            <div class="radio">
+            <div class="radio tab1">
                 <label><input type="radio" name="chuong_trinh" disabled value="Chương 2 - Đại số">Chương 2 - Đại số</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§1. Nhắc lại, bổ sung các khái niệm về hàm số">§1. Nhắc lại, bổ sung các khái niệm về hàm số</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§2. Hàm số bậc nhất">§2. Hàm số bậc nhất</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§3. Đồ thị hàm số y = ax + b (a ≠ 0)">§3. Đồ thị hàm số y = ax + b (a ≠ 0)</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§4. Đường thẳng song song và đường thẳng cắt nhau">§4. Đường thẳng song song và đường thẳng cắt nhau</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§5. Hệ số góc của đường thẳng y = ax + b (a≠ 0)">§5. Hệ số góc của đường thẳng y = ax + b (a≠ 0)</label>
             </div>
-            <div class="radio">
+            <div class="radio tab1">
                 <label><input type="radio" name="chuong_trinh" disabled value="Chương 3 - Đại số">Chương 3 - Đại số</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§1. Phương trình bậc nhất hai ẩn">§1. Phương trình bậc nhất hai ẩn</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§2. Hệ hai phương trình bậc nhất hai ẩn">§2. Hệ hai phương trình bậc nhất hai ẩn</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§3. Giải hệ phương trình bằng PP thế">§3. Giải hệ phương trình bằng PP thế</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§4. Giải hệ phương trình bằng PP cộng đại số">§4. Giải hệ phương trình bằng PP cộng đại số</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§5. Giải bài toán bằng cách lập phương trình">§5. Giải bài toán bằng cách lập phương trình</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§5. Giải bài toán bằng cách lập phương trình (tiếp)">§5. Giải bài toán bằng cách lập phương trình (tiếp)</label>
             </div>
-            <div class="radio">
+            <div class="radio tab1">
                 <label><input type="radio" name="chuong_trinh" disabled value="Chương 4 - Đại số">Chương 4 - Đại số</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§1. Hàm số y = ax2 (a #0)">§1. Hàm số y = ax2 (a #0)</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§2. Đồ thị hàm số y = ax2 (a #0)">§2. Đồ thị hàm số y = ax2 (a #0)</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§3. Phương trình bậc hai một ẩn số">§3. Phương trình bậc hai một ẩn số</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§4. Công thức nghiệm của phương trình bậc hai">§4. Công thức nghiệm của phương trình bậc hai</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§5. Công thức nghiệm thu gọn">§5. Công thức nghiệm thu gọn</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§6. Hệ thức Vi-et và ứng dụng">§6. Hệ thức Vi-et và ứng dụng</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§7. Phương trình quy về phương trình bậc hai">§7. Phương trình quy về phương trình bậc hai</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§8. Giải bài toán bằng cách lập phương trình">§8. Giải bài toán bằng cách lập phương trình</label>
             </div>
             <div class="radio">
                 <label><input type="radio" name="chuong_trinh" disabled value="Hình học">Hình học</label>
             </div>
-            <div class="radio">
+            <div class="radio tab1">
                 <label><input type="radio" name="chuong_trinh" disabled value="Chương 1 - Hình học">Chương 1 - Hình học</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§1. Một số hệ thức về đường cao trong tam giác vuông">§1. Một số hệ thức về đường cao trong tam giác vuông</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§1. Một số hệ thức về cạnh và đường cao…. (tiếp)">§1. Một số hệ thức về cạnh và đường cao…. (tiếp)</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§2. Tỉ số lượng giác của góc nhọn">§2. Tỉ số lượng giác của góc nhọn</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§2. Tỉ số lượng giác của góc nhọn (tiếp)">§2. Tỉ số lượng giác của góc nhọn (tiếp)</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§3. Sử dụng máy tính bỏ túi để tìm tỉ số lượng giác của góc">§3. Sử dụng máy tính bỏ túi để tìm tỉ số lượng giác của góc</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§4. Một số hệ thức về cạnh và góc trong tam giác vuông">§4. Một số hệ thức về cạnh và góc trong tam giác vuông</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§5. Ứng dụng thực tế các tỉ số lượng giác, thực hành ngoài trời">§5. Ứng dụng thực tế các tỉ số lượng giác, thực hành ngoài trời</label>
             </div>
-            <div class="radio">
+            <div class="radio tab1">
                 <label><input type="radio" name="chuong_trinh" disabled value="Chương 2 - Hình học">Chương 2 - Hình học</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§1. Sự xác định của đường tròn.. T/C…">§1. Sự xác định của đường tròn.. T/C…</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§2. Đường kính và dây của đường tròn">§2. Đường kính và dây của đường tròn</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§3. Liên hệ giữa dây và khoảng cách từ tâm đến dây">§3. Liên hệ giữa dây và khoảng cách từ tâm đến dây</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§4. Vị trí tương đối của đường thẳng và đường tròn">§4. Vị trí tương đối của đường thẳng và đường tròn</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§5. Dấu hiệu nhận biết tiếp tuyến của đường tròn">§5. Dấu hiệu nhận biết tiếp tuyến của đường tròn</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§6. Tính chất của hai tiếp tuyên cắt nhau">§6. Tính chất của hai tiếp tuyên cắt nhau</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§7. Vị trí tương đối của hai đường tròn">§7. Vị trí tương đối của hai đường tròn</label>
             </div>
-            <div class="radio">
+            <div class="radio tab1">
                 <label><input type="radio" name="chuong_trinh" disabled value="Chương 3 - Hình học">Chương 3 - Hình học</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§1. Góc ở tâm.Số đo cung">§1. Góc ở tâm.Số đo cung</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§2. Liên hệ giữa cung và dây">§2. Liên hệ giữa cung và dây</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§3. Góc nội tiếp">§3. Góc nội tiếp</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§4. Góc tạo bởi tia tiếp tuyến và dây cung">§4. Góc tạo bởi tia tiếp tuyến và dây cung</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§5. Góc có đỉnh ở bên trong hay bên ngoài đường tròn">§5. Góc có đỉnh ở bên trong hay bên ngoài đường tròn</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§6. Cung chứa góc">§6. Cung chứa góc</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§7. Tứ giác nội tiếp">§7. Tứ giác nội tiếp</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§8. Đường tròn ngoại tiếp. Đường tròn nội tiếp">§8. Đường tròn ngoại tiếp. Đường tròn nội tiếp</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§9. Độ dài đường tròn, cung tròn">§9. Độ dài đường tròn, cung tròn</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§10. Diện tích hình tròn, hình quạt tròn">§10. Diện tích hình tròn, hình quạt tròn</label>
             </div>
-            <div class="radio">
+            <div class="radio tab1">
                 <label><input type="radio" name="chuong_trinh" disabled value="Chương 4 - Hình học">Chương 4 - Hình học</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§1. Hình trụ, diện tích xung quanh và….">§1. Hình trụ, diện tích xung quanh và….</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§2. Hình nón – hình nón cụt. Diện tích….">§2. Hình nón – hình nón cụt. Diện tích….</label>
             </div>
-            <div class="radio">
+            <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§3. Hình cầu, diện tích mặt cầu và thể tích hình cầu">§3. Hình cầu, diện tích mặt cầu và thể tích hình cầu</label>
             </div>
         </div>
