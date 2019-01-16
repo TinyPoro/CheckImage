@@ -347,7 +347,7 @@
             ];
 
             $('.khu_vuc_select1').select2({
-                placeholder: 'Chọn khu vực trên lớp:',
+                // placeholder: 'Chọn khu vực trên lớp:',
                 width: "600px",
                 data: khu_vuc_data1,
                 formatSelection: function(item) {
@@ -360,7 +360,7 @@
             });
 
             $('.khu_vuc_select2').select2({
-                placeholder: 'Chọn khu vực ngoài lớp',
+                // placeholder: 'Chọn khu vực ngoài lớp',
                 width: "600px",
                 data: khu_vuc_data2,
                 formatSelection: function(item) {
