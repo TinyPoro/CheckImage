@@ -24,10 +24,20 @@
             <label class="input-group-text" for="chuong_trinh">Chọn chương trình: </label>
             <select class="chuong_trinh_select" name="chuong_trinh"></select>
             <hr/>
-            <label class="input-group-text" for="khu_vuc">Chọn khu vực: </label>
-            <select class="khu_vuc_select" name="khu_vuc"></select>
+            <label class="input-group-text" for="khu_vuc">Chọn khu vực kiến thức: ( chỉ được chọn 1 trong 2) </label>
+            <form>
+                <div class="form-group">
+                    <label for="in">Khu vực trong chương trình trên lớp:</label>
+                    <select class="khu_vuc_select1" name="khu_vuc_1"></select>
+                </div>
+                <div class="form-group">
+                    <label for="out">Khu vực ngoài trường tình trên lớp:</label>
+                    <select class="khu_vuc_select2" name="khu_vuc_2"></select>
+                </div>
+            </form>
             <hr/>
             <label class="input-group-text" for="other">Ý kiến khác: </label>
+            <br/>
             <textarea rows="5" cols="50" name="other"></textarea>
             <hr/>
             <button class="btn btn-primary" id="send" type="button">Đánh giá</button>
@@ -328,7 +338,12 @@
                 ];
 
 
-            let khu_vuc_data = [
+            let khu_vuc_data1 = [
+                {
+                    id: "",
+                    text: "Chưa chọn",
+                    level: 0,
+                },
                 {
                     id: "Trong chương trình",
                     text: "Trong chương trình",
@@ -342,7 +357,16 @@
                     id: "SBT",
                     text: "SBT",
                     level: 1
-                },{
+                }
+            ];
+
+            let khu_vuc_data2 = [
+                {
+                    id: "",
+                    text: "Chưa chọn",
+                    level: 0,
+                },
+                {
                     id: "Ngoài chương trình",
                     text: "Ngoài chương trình",
                     level: 0,
@@ -410,10 +434,23 @@
                 templateResult: formatResult,
             });
 
-            $('.khu_vuc_select').select2({
-                placeholder: 'Chọn chương trình',
+            $('.khu_vuc_select1').select2({
+                placeholder: 'Chọn khu vực trên lớp:',
                 width: "600px",
-                data: khu_vuc_data,
+                data: khu_vuc_data1,
+                formatSelection: function(item) {
+                    return item.text
+                },
+                formatResult: function(item) {
+                    return item.text
+                },
+                templateResult: formatResult,
+            });
+
+            $('.khu_vuc_select2').select2({
+                placeholder: 'Chọn khu vực ngoài lớp',
+                width: "600px",
+                data: khu_vuc_data2,
                 formatSelection: function(item) {
                     return item.text
                 },
@@ -425,7 +462,9 @@
 
             $('#send').click(function(){
                let chuong_trinh =  $('.chuong_trinh_select').val();
-               let khu_vuc =  $('.khu_vuc_select').val();
+
+               let khu_vuc =  $('.khu_vuc_select1').val();
+               if(khu_vuc === '') khu_vuc =  $('.khu_vuc_select2').val();
 
                let other =  $('[name="other"]').val();
 
