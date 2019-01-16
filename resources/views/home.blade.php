@@ -49,7 +49,7 @@
             <hr/>
 
 
-            <label class="input-group-text" for="chuong_trinh">Chọn chương trình: </label>
+            <label class="input-group-text" for="chuong_trinh">Chọn khung chương trình: </label>
             <div class="radio">
                 <label><input type="radio" name="chuong_trinh" value="Không xác định">Không xác định</label>
             </div>
