@@ -397,11 +397,13 @@
                         console.log(result);
 
                         if(result === 'true') {
-                            $('.owl-item img[src="'+src+'"]').remove();
+                            $('.owl-item img[src="'+src+'"]').parent().remove();
 
                             alert('Lưu thành công!');
                         }
                         else alert('Có lỗi xảy ra!');
+
+                        console.log(<?php echo count($files); ?>)
                         // setTimeout(function() {
                         //     window.location.reload();
                         // }, 500);
