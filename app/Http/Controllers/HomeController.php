@@ -51,6 +51,8 @@ class HomeController extends Controller
             return \DB::table('check_image')->where('src', $file)->count() <= 9;
         });
 
+        $files = array_values($files);
+
         return view('home', [
             'files' => $files,
             'total' => $total
