@@ -15,8 +15,8 @@
                 <th scope="col" rowspan="2">Không xác định</th>
                 <th scope="col" rowspan="2">SGK</th>
                 <th scope="col" rowspan="2">SBT</th>
-                <th scope="col" colspan="3">Độ khó tương đương trên lớp		</th>
-                <th scope="col" colspan="3">Lò luyện</th>
+                <th scope="col" colspan="3">Độ khó tương đương trên lớp</th>
+                <th scope="col" colspan="3">Nâng cao cho hệ thường</th>
                 <th scope="col" colspan="2">Hệ chuyên	</th>
             </tr>
             <tr>
