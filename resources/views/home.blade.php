@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="container">
+    <div id="divLargerImage"></div>
+
+    <div id="divOverlay"></div>
+
     <b>Số lượt đánh giá hiện tại <span id="cur_check"></span>/{{$total}}</b>
     <hr/>
     <div class="row">
@@ -285,6 +289,17 @@
 
                 return $result;
             }
+
+            $('#cur_img').click(function () {
+                var $img = $(this);
+                $('#divLargerImage').html($img.clone().height(1500).width(1000)).add($('#divOverlay')).fadeIn();
+            });
+
+            $('#divLargerImage').add($('#divOverlay')).click(function () {
+                $('#divLargerImage').add($('#divOverlay')).fadeOut(function () {
+                    $('#divLargerImage').empty();
+                });
+            });
 
             let khu_vuc_data1 = [
                 {
