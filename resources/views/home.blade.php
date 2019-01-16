@@ -15,7 +15,9 @@
         </div>
         
         <div class="col-md-5">
-            <img id="cur_img" src="{{$files[0]}}" style="width: 100%;height: 100%">
+            @if(key_exists(0, $files))
+                <img id="cur_img" src="{{$files[0]}}" style="width: 100%;height: 100%">
+            @endif
         </div>
 
         <div class="col-md-5">
@@ -24,6 +26,9 @@
             <hr/>
             <label class="input-group-text" for="khu_vuc">Chọn khu vực: </label>
             <select class="khu_vuc_select" name="khu_vuc"></select>
+            <hr/>
+            <label class="input-group-text" for="other">Ý kiến khác: </label>
+            <textarea rows="5" cols="50" name="other"></textarea>
             <hr/>
             <button class="btn btn-primary" id="send" type="button">Đánh giá</button>
         </div>
@@ -422,12 +427,15 @@
                let chuong_trinh =  $('.chuong_trinh_select').val();
                let khu_vuc =  $('.khu_vuc_select').val();
 
+               let other =  $('[name="other"]').val();
+
                let src = $('#cur_img').attr('src');
 
                 let data = {
                     chuong_trinh: chuong_trinh,
                     khu_vuc: khu_vuc,
-                    src: src
+                    src: src,
+                    other: other
                 }
 
                 $.ajax({

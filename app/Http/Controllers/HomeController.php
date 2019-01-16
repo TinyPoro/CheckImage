@@ -57,6 +57,7 @@ class HomeController extends Controller
         $chuong_trinh = $request->chuong_trinh;
         $khu_vuc = $request->khu_vuc;
         $src = $request->src;
+        $other = $request->other;
 
         try{
             if(\DB::table('check_image')->where('src', $src)->where('user_id', $user->id)->count() > 0){
@@ -64,12 +65,14 @@ class HomeController extends Controller
                     ->update([
                         'chuong_trinh' => $chuong_trinh,
                         'khu_vuc' => $khu_vuc,
+                        'other' => $other
                     ]);
             }else{
                 \DB::table('check_image')
                     ->insert([
                         'chuong_trinh' => $chuong_trinh,
                         'khu_vuc' => $khu_vuc,
+                        'other' => $other,
                         'src' => $src,
                         'user_id' => $user->id
                     ]);
