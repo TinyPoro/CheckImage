@@ -12,3 +12,7 @@ yarn-error.log
 .env
 /storage
 /app_vo
+composer.phar
+connect
+docker-compose.yml
+docker
