@@ -374,7 +374,7 @@
 
             $('#send').click(function(){
                let chuong_trinh = $("input[name='chuong_trinh']:checked").val();
-alert(chuong_trinh);return;
+
                let khu_vuc =  $('.khu_vuc_select1').val();
                if(khu_vuc === '') khu_vuc =  $('.khu_vuc_select2').val();
 
