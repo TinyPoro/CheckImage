@@ -45,11 +45,11 @@ class HomeController extends Controller
             return str_ireplace('/var/www/html', 'http://pro.data.giaingay.io', $file);
         }, $files);
 
+        $total = count($files);
+
         $files = array_filter($files, function ($file){
             return \DB::table('check_image')->where('src', $file)->count() <= 9;
         });
-
-        $total = $user->total;
 
         return view('home', [
             'files' => $files,
@@ -72,6 +72,8 @@ class HomeController extends Controller
 
         $chuong_trinh = $request->chuong_trinh;
         $khu_vuc = $request->khu_vuc;
+        $do_kho = $request->do_kho;
+        $ten_nguon = $request->ten_nguon;
         $src = $request->src;
         $other = $request->other;
 
@@ -83,6 +85,8 @@ class HomeController extends Controller
                     ->update([
                         'chuong_trinh' => $chuong_trinh,
                         'khu_vuc' => $khu_vuc,
+                        'do_kho' => $do_kho,
+                        'ten_nguon' => $ten_nguon,
                         'other' => $other
                     ]);
             }else{
@@ -90,6 +94,8 @@ class HomeController extends Controller
                     ->insert([
                         'chuong_trinh' => $chuong_trinh,
                         'khu_vuc' => $khu_vuc,
+                        'do_kho' => $do_kho,
+                        'ten_nguon' => $ten_nguon,
                         'other' => $other,
                         'src' => $src,
                         'user_id' => $user->id

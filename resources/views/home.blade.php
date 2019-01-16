@@ -225,25 +225,83 @@
             </div>
             <hr/>
 
-            <div class="radio">
-                <label><input type="radio" name="khu_vuc_radio" id="in_khu_vuc" checked>Trong chương trình trên lớp</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="khu_vuc_radio" id="out_khu_vuc">Ngoài chương trình trên lớp</label>
+            <div class="khu_vuc">
+                <div class="radio-inline">
+                    <label><input type="radio" name="khu_vuc_radio" id="do_kho_khu_vuc_1">Trong chương trình trên lớp</label>
+                </div>
+                <div class="radio-inline">
+                    <label><input type="radio" name="khu_vuc_radio" id="do_kho_khu_vuc_2">Ngoài chương trình trên lớp</label>
+                </div>
             </div>
 
             <hr/>
 
-            <form>
-                <div class="form-group">
-                    <label for="in">Khu vực trong chương trình trên lớp:</label>
-                    <select class="khu_vuc_select1" id="khu_vuc_select1" name="khu_vuc_1"></select>
+            <div class="do_kho">
+                {{--tên nguồn trong chương trình--}}
+                <div class="radio-inline">
+                    <label><input type="radio" name="do_kho_khu_vuc_1" id="ten_nguon_do_kho_1_khu_vuc_1">SGK
+                    </label>
                 </div>
-                <div class="form-group">
-                    <label for="out">Khu vực ngoài chương trình trên lớp:</label>
-                    <select class="khu_vuc_select2" id="khu_vuc_select2" name="khu_vuc_2"></select>
+                <div class="radio-inline">
+                    <label><input type="radio" name="do_kho_khu_vuc_1" id="ten_nguon_do_kho_2_khu_vuc_1">SBT
+                    </label>
                 </div>
-            </form>
+
+                <div class="radio-inline">
+                    <label><input type="radio" name="do_kho_khu_vuc_2" id="ten_nguon_do_kho_1_khu_vuc_2">Độ khó tương <br/>đương trên lớp</label>
+                </div>
+                <div class="radio-inline">
+                    <label><input type="radio" name="do_kho_khu_vuc_2" id="ten_nguon_do_kho_2_khu_vuc_2">Nâng cao cho <br/>hệ thường</label>
+                </div>
+                <div class="radio-inline">
+                    <label><input type="radio" name="do_kho_khu_vuc_2" id="ten_nguon_do_kho_3_khu_vuc_2">Hệ chuyên</label>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="ten_nguon">
+
+
+                {{--tên nguồn ngoài tương đương lớp--}}
+                <div class="radio-inline">
+                    <label><input type="radio" name="ten_nguon_do_kho_1_khu_vuc_2" id="ten_nguon_1_do_kho_1_khu_vuc_2">Cô giáo
+                    </label>
+                </div>
+                <div class="radio-inline">
+                    <label><input type="radio" name="ten_nguon_do_kho_1_khu_vuc_2" id="ten_nguon_2_do_kho_1_khu_vuc_2">Trung tâm học thêm
+                    </label>
+                </div>
+                <div class="radio-inline">
+                    <label><input type="radio" name="ten_nguon_do_kho_1_khu_vuc_2" id="ten_nguon_3_do_kho_1_khu_vuc_2">Sách tham khảo <br/>mua về
+                    </label>
+                </div>
+
+                {{--tên nguồn nâng cao--}}
+                <div class="radio-inline">
+                    <label><input type="radio" name="ten_nguon_do_kho_2_khu_vuc_2" id="ten_nguon_1_do_kho_2_khu_vuc_2">Cô giáo
+                    </label>
+                </div>
+                <div class="radio-inline">
+                    <label><input type="radio" name="ten_nguon_do_kho_2_khu_vuc_2" id="ten_nguon_2_do_kho_2_khu_vuc_2">Trung tâm học thêm
+                    </label>
+                </div>
+                <div class="radio-inline">
+                    <label><input type="radio" name="ten_nguon_do_kho_2_khu_vuc_2" id="ten_nguon_3_do_kho_2_khu_vuc_2">Sách tham khảo <br/>mua về
+                    </label>
+                </div>
+
+                {{--tên nguồn chuyên--}}
+                <div class="radio-inline">
+                    <label><input type="radio" name="ten_nguon_do_kho_3_khu_vuc_2" id="ten_nguon_1_do_kho_3_khu_vuc_2">Lò luyện
+                    </label>
+                </div>
+                <div class="radio-inline">
+                    <label><input type="radio" name="ten_nguon_do_kho_3_khu_vuc_2" id="ten_nguon_2_do_kho_3_khu_vuc_2">Cô giao
+                    </label>
+                </div>
+            </div>
+
             <hr/>
 
             <label class="input-group-text" for="other">Tại sao bạn nghĩ thế: (*) </label>
@@ -283,7 +341,6 @@
                     method: 'GET',
                     url: "/CheckImage/public/cur_check",
                     success: function(result){
-                        console.log(result);
                         $('#cur_check').text(result);
                     },
                     error: function (jqXHR, exception) {
@@ -293,12 +350,6 @@
             };
 
             update_cur_check();
-
-            function formatResult(node) {
-                let $result = $('<span id="'+node.id+'" style="padding-left:' + (20 * node.level) + 'px;">' + node.text + '</span>');
-
-                return $result;
-            }
 
             $('#cur_img').click(function () {
                 var $img = $(this);
@@ -315,138 +366,31 @@
                 });
             });
 
-            let khu_vuc_data1 = [
-                {
-                    id: "Không xác định",
-                    text: "Không xác định",
-                    level: 0,
-                },
-                {
-                    id: "Trong chương trình",
-                    text: "Trong chương trình",
-                    level: 0,
-                    "disabled": true
-                },{
-                    id: "SGK",
-                    text: "SGK",
-                    level: 1
-                },{
-                    id: "SBT",
-                    text: "SBT",
-                    level: 1
-                }
-            ];
 
-            let khu_vuc_data2 = [
-                {
-                    id: "Không xác định",
-                    text: "Không xác định",
-                    level: 0,
-                },
-                {
-                    id: "Ngoài chương trình",
-                    text: "Ngoài chương trình",
-                    level: 0,
-                    "disabled": true
-                },{
-                    id: "Độ khó tương đương trên lớp",
-                    text: "Độ khó tương đương trên lớp",
-                    level: 1,
-                    "disabled": true
-                },{
-                    id: "Cô giao - Trên lớp",
-                    text: "Cô giao - Trên lớp",
-                    level: 2
-                },{
-                    id: "Trung tâm học thêm - Trên lớp",
-                    text: "Trung tâm học thêm - Trên lớp",
-                    level: 2
-                },{
-                    id: "Sách tham khảo mua về - Trên lớp",
-                    text: "Sách tham khảo mua về - Trên lớp",
-                    level: 2
-                },{
-                    id: "Nâng cao cho hệ thường",
-                    text: "Nâng cao cho hệ thường",
-                    level: 1,
-                    "disabled": true
-                },{
-                    id: "Cô giao - Nâng cao thường",
-                    text: "Cô giao - Nâng cao thường",
-                    level: 2
-                },{
-                    id: "Trung tâm học thêm - Nâng cao thường",
-                    text: "Trung tâm học thêm - Nâng cao thường",
-                    level: 2
-                },{
-                    id: "Sách tham khảo mua về - Nâng cao thường2",
-                    text: "Sách tham khảo mua về - Nâng cao thường",
-                    level: 2
-                },{
-                    id: "Hệ chuyên",
-                    text: "Hệ chuyên",
-                    level: 1,
-                    "disabled": true
-                },{
-                    id: "Lò luyện",
-                    text: "Lò luyện",
-                    level: 2
-                },{
-                    id: "Cô giao - Hệ chuyên",
-                    text: "Cô giao - Hệ chuyên",
-                    level: 2
-                },
-            ];
 
-            $('.khu_vuc_select1').select2({
-                // placeholder: 'Chọn khu vực trên lớp:',
-                width: "600px",
-                data: khu_vuc_data1,
-                formatSelection: function(item) {
-                    return item.text
-                },
-                formatResult: function(item) {
-                    return item.text
-                },
-                templateResult: formatResult,
-            });
+            $('input[type=radio]').change(function() {
+                let name = $(this).attr('name');
 
-            $('.khu_vuc_select2').select2({
-                // placeholder: 'Chọn khu vực ngoài lớp',
-                width: "600px",
-                data: khu_vuc_data2,
-                formatSelection: function(item) {
-                    return item.text
-                },
-                formatResult: function(item) {
-                    return item.text
-                },
-                templateResult: formatResult,
-            });
+                let id = $('input[type=radio][name="'+name+'"]:checked').attr('id');
 
-            let update_khu_vuc_select = function () {
-                if ($("#in_khu_vuc").is(":checked")) {
-                    $('#khu_vuc_select1').prop('disabled', false);
-                    $('#khu_vuc_select2').prop('disabled', 'disabled');
-                }
-                else {
-                    $('#khu_vuc_select2').prop('disabled', false);
-                    $('#khu_vuc_select1').prop('disabled', 'disabled');
-                }
-            };
+                $('input[type=radio][name="'+id+'"]').parent().parent().siblings().find('label').hide();
+                $('input[type=radio][name="'+id+'"]').parent().parent().siblings().find('input[type=radio]').prop('checked', false);
+                $('input[type=radio][name="'+id+'"]').parent().show();
 
-            update_khu_vuc_select();
-            $('input[type=radio][name="khu_vuc_radio"]').change(function() {
-                update_khu_vuc_select();
+                $('.radio-inline').css('padding-left', '20px');
+                $('label:hidden').parent('.radio-inline').css('padding-left', '0px');
+
             });
 
 
             $('#send').click(function(){
                let chuong_trinh = $("input[name='chuong_trinh']:checked").val();
 
-               let khu_vuc =  $('.khu_vuc_select1').val();
-               if(khu_vuc === '') khu_vuc =  $('.khu_vuc_select2').val();
-
+               let khu_vuc = $('input[type=radio][name^="khu_vuc"]:checked').parent('label').text();
+               let do_kho = $('input[type=radio][name^="do_kho"]:checked').parent('label').text();
+               let ten_nguon = $('input[type=radio][name^="khu_vuc"]:checked').parent('label').text();
+               alert(do_kho);
+               return;
                let other =  $('[name="other"]').val();
 
                let src = $('#cur_img').attr('src');
@@ -454,6 +398,8 @@
                 let data = {
                     chuong_trinh: chuong_trinh,
                     khu_vuc: khu_vuc,
+                    do_kho: do_kho,
+                    ten_nguon: ten_nguon,
                     src: src,
                     other: other
                 }

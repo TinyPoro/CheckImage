@@ -37,3 +37,11 @@
     position: relative;
     left: 6rem;
 }
+
+.do_kho label{
+    display: none;
+}
+
+.ten_nguon label{
+    display: none;
+}
