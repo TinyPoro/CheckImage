@@ -44,7 +44,9 @@
 
 
             <label class="input-group-text" for="chuong_trinh">Chọn chương trình: </label>
-
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="Không xác định">Không xác định</label>
+            </div>
             <div class="radio">
                 <label><input type="radio" name="chuong_trinh" disabled value="Đại số">Đại số</label>
             </div>
@@ -245,6 +247,9 @@
 @section('after-script')
     <script type="text/javascript">
         $(document).ready(async function(){
+            let files = '<?php echo htmlspecialchars_decode(json_encode($files, JSON_UNESCAPED_UNICODE)); ?>';
+            files = JSON.parse(files);
+
             $(".owl-carousel").owlCarousel({
                 items: 5,
                 vertical:true,
@@ -270,6 +275,11 @@
                     level: 0,
                 },
                 {
+                    id: "Không xác định",
+                    text: "Không xác định",
+                    level: 0,
+                },
+                {
                     id: "Trong chương trình",
                     text: "Trong chương trình",
                     level: 0,
@@ -289,6 +299,11 @@
                 {
                     id: "",
                     text: "Chưa chọn",
+                    level: 0,
+                },
+                {
+                    id: "Không xác định",
+                    text: "Không xác định",
                     level: 0,
                 },
                 {
@@ -399,14 +414,22 @@
                         if(result === 'true') {
                             $('.owl-item img[src="'+src+'"]').parent().remove();
 
+                            let cur_index = files.indexOf(src);
+
+                            let next_url = '';
+                            if(cur_index < files.length - 1) next_url = files[cur_index + 1];
+
+                            files = files.filter(function (value) {
+                                return value !== src;
+                            });
+
+                            console.log(files);
+
                             alert('Lưu thành công!');
+
+                            if(next_url) $('#cur_img').attr("src", next_url);;
                         }
                         else alert('Có lỗi xảy ra!');
-
-                        console.log(<?php echo count($files); ?>)
-                        // setTimeout(function() {
-                        //     window.location.reload();
-                        // }, 500);
                     },
                     error: function (jqXHR, exception) {
                         console.log(exception);
