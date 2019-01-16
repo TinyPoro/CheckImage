@@ -34,10 +34,12 @@ class HomeController extends Controller
             $type = $request->get('type');
         }
 
-        $files = glob("/var/www/html/$type/*");
+        $lop = 'lop_9';
+        if($request->has('lop')){
+            $lop = $request->get('lop');
+        }
 
-        $chuong_trinh = config('chuong_trinh');
-        $khu_vuc = config('khu_vuc');
+        $files = glob("/var/www/html/$type/$lop/*");
 
         $files = array_map(function($file){
             return str_ireplace('/var/www/html', 'http://pro.data.giaingay.io', $file);
@@ -51,8 +53,6 @@ class HomeController extends Controller
 
         return view('home', [
             'files' => $files,
-            'chuong_trinh' => $chuong_trinh,
-            'khu_vuc' => $khu_vuc,
             'total' => $total
         ]);
     }
