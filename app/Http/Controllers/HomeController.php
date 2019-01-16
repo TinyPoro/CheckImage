@@ -61,6 +61,8 @@ class HomeController extends Controller
 
         try{
             if(\DB::table('check_image')->where('src', $src)->where('user_id', $user->id)->count() > 0){
+                if(\DB::table('check_image')->where('src', $src)->where('user_id', $user->id)->count() > 9) return 'Giới hạn 10 người đánh giả 1 ảnh!';
+
                 \DB::table('check_image')->where('src', $src)->where('user_id', $user->id)
                     ->update([
                         'chuong_trinh' => $chuong_trinh,

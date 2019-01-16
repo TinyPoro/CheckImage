@@ -395,9 +395,9 @@ alert(chuong_trinh);return;
                     data: data,
                     success: function(result){
                         console.log(result);
-                        setTimeout(function() {
-                            window.location.reload();
-                        }, 500);
+                        // setTimeout(function() {
+                        //     window.location.reload();
+                        // }, 500);
                     },
                     error: function (jqXHR, exception) {
                         console.log(exception);
