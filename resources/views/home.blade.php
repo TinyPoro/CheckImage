@@ -389,8 +389,7 @@
                let khu_vuc = $('input[type=radio][name^="khu_vuc"]:checked').parent('label').text();
                let do_kho = $('input[type=radio][name^="do_kho"]:checked').parent('label').text();
                let ten_nguon = $('input[type=radio][name^="khu_vuc"]:checked').parent('label').text();
-               alert(do_kho);
-               return;
+
                let other =  $('[name="other"]').val();
 
                let src = $('#cur_img').attr('src');
