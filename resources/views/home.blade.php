@@ -246,7 +246,7 @@
             </form>
             <hr/>
 
-            <label class="input-group-text" for="other">Ý kiến khác: </label>
+            <label class="input-group-text" for="other">Tại sao bạn nghĩ thế: </label>
             <br/>
             <textarea rows="5" cols="83" name="other"></textarea>
             <hr/>
