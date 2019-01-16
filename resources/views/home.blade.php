@@ -37,7 +37,7 @@
                     <select class="khu_vuc_select1" name="khu_vuc_1"></select>
                 </div>
                 <div class="form-group">
-                    <label for="out">Khu vực ngoài trường tình trên lớp:</label>
+                    <label for="out">Khu vực ngoài chương trình trên lớp:</label>
                     <select class="khu_vuc_select2" name="khu_vuc_2"></select>
                 </div>
             </form>
