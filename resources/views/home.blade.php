@@ -272,6 +272,9 @@
             $(".owl-carousel img").click(function () {
                 let src = $(this).attr("src");
 
+                $(this).css('border', '1px solid blue');
+                $(this).parent().siblings().find('img').css('border', '');
+
                 $('#cur_img').attr("src", src);
             });
 
