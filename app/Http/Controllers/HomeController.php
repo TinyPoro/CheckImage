@@ -35,21 +35,25 @@ class HomeController extends Controller
             $type = $request->get('type');
         }
 
-        $files = glob("/var/www/html/$type/*");
+        $lop = 'lop_9';
+        if($request->has('lop')){
+            $lop = $request->get('lop');
+        }
 
-        $chuong_trinh = config('chuong_trinh');
-        $khu_vuc = config('khu_vuc');
+        $files = glob("/var/www/html/$type/$lop/*");
 
         $files = array_map(function ($file) {
             return str_ireplace('/var/www/html', 'http://pro.data.giaingay.io', $file);
         }, $files);
 
+        $files = array_filter($files, function ($file){
+            return \DB::table('check_image')->where('src', $file)->count() <= 9;
+        });
+
         $total = $user->total;
 
         return view('home', [
             'files' => $files,
-            'chuong_trinh' => $chuong_trinh,
-            'khu_vuc' => $khu_vuc,
             'total' => $total
         ]);
     }
@@ -77,7 +81,10 @@ class HomeController extends Controller
         try {
             if (\DB::table('check_image')->where('src', $src)->where('user_id', $user->id)->count() > 0) {
                 if (\DB::table('check_image')->where('src', $src)->where('user_id', $user->id)->count() > 9) return 'Giới hạn 10 người đánh giả 1 ảnh!';
+        try{
+            if(\DB::table('check_image')->where('src', $src)->count() > 9) return 'Giới hạn 10 người đánh giả 1 ảnh!';
 
+            if(\DB::table('check_image')->where('src', $src)->where('user_id', $user->id)->count() > 0){
                 \DB::table('check_image')->where('src', $src)->where('user_id', $user->id)
                     ->update([
                         'chuong_trinh' => $chuong_trinh,

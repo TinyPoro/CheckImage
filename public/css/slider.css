@@ -3,7 +3,23 @@
     height:680px;
 }
 
+.owl-stage-outer{
+    position: relative;
+    top: 35px;
+}
+
 .owl-carousel .owl-stage-outer {
     overflow: hidden;
     max-height: 680px;
+}
+.owl-nav{
+    text-align: center;
+}
+.owl-prev{
+    position: relative;
+    bottom: 675px;
+}
+.owl-next{
+    position: relative;
+    top: 30px;
 }

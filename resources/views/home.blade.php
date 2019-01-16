@@ -27,31 +27,9 @@
         </div>
 
         <div class="col-md-5">
-            <button class="btn btn-primary" id="send" type="button">Đánh giá</button>
-            <hr/>
-
-            <label class="input-group-text" for="khu_vuc">Chọn khu vực kiến thức: ( chỉ được chọn 1 trong 2) </label>
-            <form>
-                <div class="form-group">
-                    <label for="in">Khu vực trong chương trình trên lớp:</label>
-                    <select class="khu_vuc_select1" name="khu_vuc_1"></select>
-                </div>
-                <div class="form-group">
-                    <label for="out">Khu vực ngoài chương trình trên lớp:</label>
-                    <select class="khu_vuc_select2" name="khu_vuc_2"></select>
-                </div>
-            </form>
-            <hr/>
-
-            <label class="input-group-text" for="other">Ý kiến khác: </label>
-            <br/>
-            <textarea rows="5" cols="83" name="other"></textarea>
-            <hr/>
-
-
             <label class="input-group-text" for="chuong_trinh">Chọn khung chương trình: </label>
             <div class="radio">
-                <label><input type="radio" name="chuong_trinh" value="Không xác định">Không xác định</label>
+                <label><input type="radio" name="chuong_trinh" checked value="Không xác định">Không xác định</label>
             </div>
             <div class="radio">
                 <label><input type="radio" name="chuong_trinh" disabled value="Đại số">Đại số</label>
@@ -60,7 +38,7 @@
                 <label><input type="radio" name="chuong_trinh" disabled value="Chương 1 - Đại số">Chương 1 - Đại số</label>
             </div>
             <div class="radio tab">
-                <label><input type="radio" name="chuong_trinh" checked value="§1. Căn bậc hai">§1. Căn bậc hai</label>
+                <label><input type="radio" name="chuong_trinh" value="§1. Căn bậc hai">§1. Căn bậc hai</label>
             </div>
             <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§2. Căn thức bậc hai và HĐT">§2. Căn thức bậc hai và HĐT</label>
@@ -245,6 +223,35 @@
             <div class="radio tab">
                 <label><input type="radio" name="chuong_trinh" value="§3. Hình cầu, diện tích mặt cầu và thể tích hình cầu">§3. Hình cầu, diện tích mặt cầu và thể tích hình cầu</label>
             </div>
+            <hr/>
+
+            <div class="radio">
+                <label><input type="radio" name="khu_vuc_radio" id="in_khu_vuc" checked>Trong chương trình trên lớp</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="khu_vuc_radio" id="out_khu_vuc">Ngoài chương trình trên lớp</label>
+            </div>
+
+            <hr/>
+
+            <form>
+                <div class="form-group">
+                    <label for="in">Khu vực trong chương trình trên lớp:</label>
+                    <select class="khu_vuc_select1" id="khu_vuc_select1" name="khu_vuc_1"></select>
+                </div>
+                <div class="form-group">
+                    <label for="out">Khu vực ngoài chương trình trên lớp:</label>
+                    <select class="khu_vuc_select2" id="khu_vuc_select2" name="khu_vuc_2"></select>
+                </div>
+            </form>
+            <hr/>
+
+            <label class="input-group-text" for="other">Tại sao bạn nghĩ thế: (*) </label>
+            <br/>
+            <textarea rows="5" cols="83" name="other"></textarea>
+            <hr/>
+            <button class="btn btn-primary" id="send" type="button">Đánh giá</button>
+
         </div>
     </div>
 </div>
@@ -264,6 +271,9 @@
 
             $(".owl-carousel img").click(function () {
                 let src = $(this).attr("src");
+
+                $(this).css('border', '1px solid blue');
+                $(this).parent().siblings().find('img').css('border', '');
 
                 $('#cur_img').attr("src", src);
             });
@@ -292,7 +302,11 @@
 
             $('#cur_img').click(function () {
                 var $img = $(this);
-                $('#divLargerImage').html($img.clone().height(1500).width(1000)).add($('#divOverlay')).fadeIn();
+                $('#divLargerImage').html($img.clone().css({
+                    maxWidth: "800px",
+                    width: "auto",
+                    height: "auto"
+                })).add($('#divOverlay')).fadeIn();
             });
 
             $('#divLargerImage').add($('#divOverlay')).click(function () {
@@ -302,11 +316,6 @@
             });
 
             let khu_vuc_data1 = [
-                {
-                    id: "",
-                    text: "Chưa chọn",
-                    level: 0,
-                },
                 {
                     id: "Không xác định",
                     text: "Không xác định",
@@ -329,11 +338,6 @@
             ];
 
             let khu_vuc_data2 = [
-                {
-                    id: "",
-                    text: "Chưa chọn",
-                    level: 0,
-                },
                 {
                     id: "Không xác định",
                     text: "Không xác định",
@@ -420,6 +424,23 @@
                 templateResult: formatResult,
             });
 
+            let update_khu_vuc_select = function () {
+                if ($("#in_khu_vuc").is(":checked")) {
+                    $('#khu_vuc_select1').prop('disabled', false);
+                    $('#khu_vuc_select2').prop('disabled', 'disabled');
+                }
+                else {
+                    $('#khu_vuc_select2').prop('disabled', false);
+                    $('#khu_vuc_select1').prop('disabled', 'disabled');
+                }
+            };
+
+            update_khu_vuc_select();
+            $('input[type=radio][name="khu_vuc_radio"]').change(function() {
+                update_khu_vuc_select();
+            });
+
+
             $('#send').click(function(){
                let chuong_trinh = $("input[name='chuong_trinh']:checked").val();
 
@@ -464,7 +485,7 @@
 
                             update_cur_check();
                         }
-                        else alert('Có lỗi xảy ra!');
+                        else alert(result);
                     },
                     error: function (jqXHR, exception) {
                         console.log(exception);

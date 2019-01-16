@@ -14,7 +14,7 @@ class AddOtherToCheckImageTable extends Migration
     public function up()
     {
         Schema::table('check_image', function (Blueprint $table) {
-            $table->text('other')->nullable();
+            $table->text('other');
         });
     }
 
