@@ -27,25 +27,25 @@ class HomeController extends Controller
     {
         $user = Auth::user();
 
-        if(!$user) return redirect(route('login'));
+        if (!$user) return redirect(route('login'));
 
         $type = 'app_vo';
-        if($request->has('type')){
+        if ($request->has('type')) {
             $type = $request->get('type');
         }
 
         $lop = 'lop_9';
-        if($request->has('lop')){
+        if ($request->has('lop')) {
             $lop = $request->get('lop');
         }
 
         $files = glob("/var/www/html/$type/$lop/*");
 
-        $files = array_map(function($file){
+        $files = array_map(function ($file) {
             return str_ireplace('/var/www/html', 'http://pro.data.giaingay.io', $file);
         }, $files);
 
-        $files = array_filter($files, function ($file){
+        $files = array_filter($files, function ($file) {
             return \DB::table('check_image')->where('src', $file)->count() <= 9;
         });
 
@@ -57,35 +57,37 @@ class HomeController extends Controller
         ]);
     }
 
-    public function getCheckNumber(){
+    public function getCheckNumber()
+    {
         $user = Auth::user();
 
-        if(!$user) return 0;
+        if (!$user) return 0;
 
         return \DB::table('check_image')->where('user_id', $user->id)->count();
     }
 
-    public function post(Request $request){
+    public function post(Request $request)
+    {
         $user = Auth::user();
 
-        if(!$user) return 'no user login';
+        if (!$user) return 'no user login';
 
         $chuong_trinh = $request->chuong_trinh;
         $khu_vuc = $request->khu_vuc;
         $src = $request->src;
         $other = $request->other;
 
-        try{
-            if(\DB::table('check_image')->where('src', $src)->count() > 9) return 'Giới hạn 10 người đánh giả 1 ảnh!';
+        try {
+            if (\DB::table('check_image')->where('src', $src)->count() > 9) return 'Giới hạn 10 người đánh giả 1 ảnh!';
 
-            if(\DB::table('check_image')->where('src', $src)->where('user_id', $user->id)->count() > 0){
+            if (\DB::table('check_image')->where('src', $src)->where('user_id', $user->id)->count() > 0) {
                 \DB::table('check_image')->where('src', $src)->where('user_id', $user->id)
                     ->update([
                         'chuong_trinh' => $chuong_trinh,
                         'khu_vuc' => $khu_vuc,
                         'other' => $other
                     ]);
-            }else{
+            } else {
                 \DB::table('check_image')
                     ->insert([
                         'chuong_trinh' => $chuong_trinh,
@@ -98,7 +100,7 @@ class HomeController extends Controller
 
             return 'true';
 
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return $e->getMessage();
         }
 
@@ -115,7 +117,7 @@ class HomeController extends Controller
                     "§3. Liên hệ giữa phép nhân và phép khai phương",
                     "§4. Liên hệ giữa phép chia và phép khai phương",
                     "§6. Biến đổi đơn giản biểu thức chứa căn bậc 2",
-                    "§7. Biến đổi đơn giản biểu thức chứa căn…. (tiếp)",
+                    "§7. Biến đổi đơn giản biểu thức chứa căn bậc 2. (tiếp)",
                     "§8. Rút gọn biểu thức chứa căn bậc hai",
                     "§9. Căn bậc ba"
                 ],
@@ -213,6 +215,12 @@ class HomeController extends Controller
                     $values[$cur_key . $kind] += $values[$cur_key . $cha_key . $kind];
             }
         }
+        $count = 0;
+        foreach ($curriculums as $cur_key => $curriculum) {
+            foreach ($kinds as $kind)
+                $count += $values[$cur_key . $kind];
+        }
+        // dd($count);
         return view('report', ['curriculums' => $curriculums, "values" => $values, "kinds" => $kinds]);
     }
 }
