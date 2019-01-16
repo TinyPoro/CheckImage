@@ -478,7 +478,7 @@
 
                             update_cur_check();
                         }
-                        else alert('Có lỗi xảy ra!');
+                        else alert(result);
                     },
                     error: function (jqXHR, exception) {
                         console.log(exception);
