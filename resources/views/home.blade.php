@@ -45,7 +45,7 @@
 
             <label class="input-group-text" for="other">Ý kiến khác: </label>
             <br/>
-            <textarea rows="5" cols="50" name="other"></textarea>
+            <textarea rows="5" cols="83" name="other"></textarea>
             <hr/>
 
 
