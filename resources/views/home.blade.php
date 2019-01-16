@@ -227,10 +227,12 @@
 
             <div class="khu_vuc">
                 <div class="radio-inline">
-                    <label><input type="radio" name="khu_vuc_radio" id="do_kho_khu_vuc_1">Trong chương trình trên lớp</label>
+                    <label><input type="radio" name="khu_vuc_radio" id="do_kho_khu_vuc_0">Không xác định</label>
+                </div><div class="radio-inline">
+                    <label><input type="radio" name="khu_vuc_radio" id="do_kho_khu_vuc_1">Trong chương<br/> trình trên lớp</label>
                 </div>
                 <div class="radio-inline">
-                    <label><input type="radio" name="khu_vuc_radio" id="do_kho_khu_vuc_2">Ngoài chương trình trên lớp</label>
+                    <label><input type="radio" name="khu_vuc_radio" id="do_kho_khu_vuc_2">Ngoài chương<br/> trình trên lớp</label>
                 </div>
             </div>
 
@@ -375,6 +377,17 @@
 
                 $('input[type=radio][name="'+id+'"]').parent().parent().siblings().find('label').hide();
                 $('input[type=radio][name="'+id+'"]').parent().parent().siblings().find('input[type=radio]').prop('checked', false);
+
+                if(id == 'do_kho_khu_vuc_0'){
+                    $('input[type=radio][name^="do_kho"]').parent('label').hide();
+                    $('input[type=radio][name^="do_kho"]').prop('checked', false);
+                }
+
+                if(id.indexOf("do_kho") === 0){
+                    $('input[type=radio][name^="ten_nguon"]').parent('label').hide();
+                    $('input[type=radio][name^="ten_nguon"]').prop('checked', false);
+                }
+
                 $('input[type=radio][name="'+id+'"]').parent().show();
 
                 $('.radio-inline').css('padding-left', '20px');
