@@ -302,7 +302,11 @@
 
             $('#cur_img').click(function () {
                 var $img = $(this);
-                $('#divLargerImage').html($img.clone().height(1500).width(1000)).add($('#divOverlay')).fadeIn();
+                $('#divLargerImage').html($img.clone().css({
+                    maxWidth: "800px",
+                    width: "auto",
+                    height: "auto"
+                })).add($('#divOverlay')).fadeIn();
             });
 
             $('#divLargerImage').add($('#divOverlay')).click(function () {
