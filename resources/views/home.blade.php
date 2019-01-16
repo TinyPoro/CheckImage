@@ -21,9 +21,9 @@
         </div>
 
         <div class="col-md-5">
-            <label class="input-group-text" for="chuong_trinh">Chọn chương trình: </label>
-            <select class="chuong_trinh_select" name="chuong_trinh"></select>
+            <button class="btn btn-primary" id="send" type="button">Đánh giá</button>
             <hr/>
+
             <label class="input-group-text" for="khu_vuc">Chọn khu vực kiến thức: ( chỉ được chọn 1 trong 2) </label>
             <form>
                 <div class="form-group">
@@ -36,11 +36,207 @@
                 </div>
             </form>
             <hr/>
+
             <label class="input-group-text" for="other">Ý kiến khác: </label>
             <br/>
             <textarea rows="5" cols="50" name="other"></textarea>
             <hr/>
-            <button class="btn btn-primary" id="send" type="button">Đánh giá</button>
+
+
+            <label class="input-group-text" for="chuong_trinh">Chọn chương trình: </label>
+
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" disabled value="Đại số">Đại số</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" disabled value="Chương 1 - Đại số">Chương 1 - Đại số</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" checked value="§1. Căn bậc hai">§1. Căn bậc hai</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§2. Căn thức bậc hai và HĐT">§2. Căn thức bậc hai và HĐT</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§3. Liên hệ giữa phép nhân và phép khai phương">§3. Liên hệ giữa phép nhân và phép khai phương</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§4. Liên hệ giữa phép chia và phép khai phương">§4. Liên hệ giữa phép chia và phép khai phương</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§6. Biến đổi đơn giản biểu thức chứa căn bậc 2">§6. Biến đổi đơn giản biểu thức chứa căn bậc 2</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§7. Biến đổi đơn giản biểu thức chứa căn bậc 2. (tiếp)">§7. Biến đổi đơn giản biểu thức chứa căn bậc 2. (tiếp)</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§8. Rút gọn biểu thức chứa căn bậc hai">§8. Rút gọn biểu thức chứa căn bậc hai</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§9. Căn bậc ba">§9. Căn bậc ba</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" disabled value="Chương 2 - Đại số">Chương 2 - Đại số</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§1. Nhắc lại, bổ sung các khái niệm về hàm số">§1. Nhắc lại, bổ sung các khái niệm về hàm số</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§2. Hàm số bậc nhất">§2. Hàm số bậc nhất</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§3. Đồ thị hàm số y = ax + b (a ≠ 0)">§3. Đồ thị hàm số y = ax + b (a ≠ 0)</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§4. Đường thẳng song song và đường thẳng cắt nhau">§4. Đường thẳng song song và đường thẳng cắt nhau</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§5. Hệ số góc của đường thẳng y = ax + b (a≠ 0)">§5. Hệ số góc của đường thẳng y = ax + b (a≠ 0)</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" disabled value="Chương 3 - Đại số">Chương 3 - Đại số</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§1. Phương trình bậc nhất hai ẩn">§1. Phương trình bậc nhất hai ẩn</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§2. Hệ hai phương trình bậc nhất hai ẩn">§2. Hệ hai phương trình bậc nhất hai ẩn</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§3. Giải hệ phương trình bằng PP thế">§3. Giải hệ phương trình bằng PP thế</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§4. Giải hệ phương trình bằng PP cộng đại số">§4. Giải hệ phương trình bằng PP cộng đại số</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§5. Giải bài toán bằng cách lập phương trình">§5. Giải bài toán bằng cách lập phương trình</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§5. Giải bài toán bằng cách lập phương trình (tiếp)">§5. Giải bài toán bằng cách lập phương trình (tiếp)</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" disabled value="Chương 4 - Đại số">Chương 4 - Đại số</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§1. Hàm số y = ax2 (a #0)">§1. Hàm số y = ax2 (a #0)</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§2. Đồ thị hàm số y = ax2 (a #0)">§2. Đồ thị hàm số y = ax2 (a #0)</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§3. Phương trình bậc hai một ẩn số">§3. Phương trình bậc hai một ẩn số</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§4. Công thức nghiệm của phương trình bậc hai">§4. Công thức nghiệm của phương trình bậc hai</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§5. Công thức nghiệm thu gọn">§5. Công thức nghiệm thu gọn</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§6. Hệ thức Vi-et và ứng dụng">§6. Hệ thức Vi-et và ứng dụng</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§7. Phương trình quy về phương trình bậc hai">§7. Phương trình quy về phương trình bậc hai</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§8. Giải bài toán bằng cách lập phương trình">§8. Giải bài toán bằng cách lập phương trình</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" disabled value="Hình học">Hình học</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" disabled value="Chương 1 - Hình học">Chương 1 - Hình học</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§1. Một số hệ thức về đường cao trong tam giác vuông">§1. Một số hệ thức về đường cao trong tam giác vuông</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§1. Một số hệ thức về cạnh và đường cao…. (tiếp)">§1. Một số hệ thức về cạnh và đường cao…. (tiếp)</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§2. Tỉ số lượng giác của góc nhọn">§2. Tỉ số lượng giác của góc nhọn</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§2. Tỉ số lượng giác của góc nhọn (tiếp)">§2. Tỉ số lượng giác của góc nhọn (tiếp)</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§3. Sử dụng máy tính bỏ túi để tìm tỉ số lượng giác của góc">§3. Sử dụng máy tính bỏ túi để tìm tỉ số lượng giác của góc</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§4. Một số hệ thức về cạnh và góc trong tam giác vuông">§4. Một số hệ thức về cạnh và góc trong tam giác vuông</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§5. Ứng dụng thực tế các tỉ số lượng giác, thực hành ngoài trời">§5. Ứng dụng thực tế các tỉ số lượng giác, thực hành ngoài trời</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" disabled value="Chương 2 - Hình học">Chương 2 - Hình học</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§1. Sự xác định của đường tròn.. T/C…">§1. Sự xác định của đường tròn.. T/C…</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§2. Đường kính và dây của đường tròn">§2. Đường kính và dây của đường tròn</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§3. Liên hệ giữa dây và khoảng cách từ tâm đến dây">§3. Liên hệ giữa dây và khoảng cách từ tâm đến dây</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§4. Vị trí tương đối của đường thẳng và đường tròn">§4. Vị trí tương đối của đường thẳng và đường tròn</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§5. Dấu hiệu nhận biết tiếp tuyến của đường tròn">§5. Dấu hiệu nhận biết tiếp tuyến của đường tròn</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§6. Tính chất của hai tiếp tuyên cắt nhau">§6. Tính chất của hai tiếp tuyên cắt nhau</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§7. Vị trí tương đối của hai đường tròn">§7. Vị trí tương đối của hai đường tròn</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" disabled value="Chương 3 - Hình học">Chương 3 - Hình học</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§1. Góc ở tâm.Số đo cung">§1. Góc ở tâm.Số đo cung</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§2. Liên hệ giữa cung và dây">§2. Liên hệ giữa cung và dây</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§3. Góc nội tiếp">§3. Góc nội tiếp</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§4. Góc tạo bởi tia tiếp tuyến và dây cung">§4. Góc tạo bởi tia tiếp tuyến và dây cung</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§5. Góc có đỉnh ở bên trong hay bên ngoài đường tròn">§5. Góc có đỉnh ở bên trong hay bên ngoài đường tròn</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§6. Cung chứa góc">§6. Cung chứa góc</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§7. Tứ giác nội tiếp">§7. Tứ giác nội tiếp</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§8. Đường tròn ngoại tiếp. Đường tròn nội tiếp">§8. Đường tròn ngoại tiếp. Đường tròn nội tiếp</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§9. Độ dài đường tròn, cung tròn">§9. Độ dài đường tròn, cung tròn</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§10. Diện tích hình tròn, hình quạt tròn">§10. Diện tích hình tròn, hình quạt tròn</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" disabled value="Chương 4 - Hình học">Chương 4 - Hình học</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§1. Hình trụ, diện tích xung quanh và….">§1. Hình trụ, diện tích xung quanh và….</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§2. Hình nón – hình nón cụt. Diện tích….">§2. Hình nón – hình nón cụt. Diện tích….</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="chuong_trinh" value="§3. Hình cầu, diện tích mặt cầu và thể tích hình cầu">§3. Hình cầu, diện tích mặt cầu và thể tích hình cầu</label>
+            </div>
         </div>
     </div>
 </div>
@@ -66,277 +262,6 @@
 
                 return $result;
             }
-
-            let chuong_trinh_data = [
-                    {
-                        id: "Đại số",
-                        text: "Đại số",
-                        level: 0,
-                        "disabled": true
-                    },{
-                        id: "Chương 1 - Đại số",
-                        text: "Chương 1 - Đại số",
-                        level: 1,
-                    "disabled": true
-                    },{
-                        id: "§1. Căn bậc hai",
-                        text: "§1. Căn bậc hai",
-                        level: 2
-                    },{
-                        id: "§2. Căn thức bậc hai và HĐT",
-                        text: "§2. Căn thức bậc hai và HĐT",
-                        level: 2
-                    },{
-                        id: "§3. Liên hệ giữa phép nhân và phép khai phương",
-                        text: "§3. Liên hệ giữa phép nhân và phép khai phương",
-                        level: 2
-                    },{
-                        id: "§4. Liên hệ giữa phép chia và phép khai phương",
-                        text: "§4. Liên hệ giữa phép chia và phép khai phương",
-                        level: 2
-                    },{
-                    id: "§6. Biến đổi đơn giản biểu thức chứa căn bậc 2",
-                        text: "§6. Biến đổi đơn giản biểu thức chứa căn bậc 2",
-                        level: 2
-                    },{
-                    id: "§7. Biến đổi đơn giản biểu thức chứa căn bậc 2. (tiếp)",
-                        text: "§7. Biến đổi đơn giản biểu thức chứa căn bậc 2. (tiếp)",
-                        level: 2
-                    },{
-                    id: "§8. Rút gọn biểu thức chứa căn bậc hai",
-                        text: "§8. Rút gọn biểu thức chứa căn bậc hai",
-                        level: 2
-                    },{
-                    id: "§9. Căn bậc ba",
-                        text: "§9. Căn bậc ba",
-                        level: 2
-                    },{
-                    id: "Chương 2 - Đại số",
-                        text: "Chương 2 - Đại số",
-                        level: 1,
-                    "disabled": true
-                    },{
-                    id: "§1. Nhắc lại, bổ sung các khái niệm về hàm số",
-                        text: "§1. Nhắc lại, bổ sung các khái niệm về hàm số",
-                        level: 2
-                    },{
-                    id: "§2. Hàm số bậc nhất",
-                        text: "§2. Hàm số bậc nhất",
-                        level: 2
-                    },{
-                    id: "§3. Đồ thị hàm số y = ax + b (a ≠ 0)",
-                        text: "§3. Đồ thị hàm số y = ax + b (a ≠ 0)",
-                        level: 2
-                    },{
-                    id: "§4. Đường thẳng song song và đường thẳng cắt nhau",
-                        text: "§4. Đường thẳng song song và đường thẳng cắt nhau",
-                        level: 2
-                    },{
-                    id: "§5. Hệ số góc của đường thẳng y = ax + b (a≠ 0)",
-                        text: "§5. Hệ số góc của đường thẳng y = ax + b (a≠ 0)",
-                        level: 2
-                    },{
-                    id: "Chương 3 - Đại số",
-                        text: "Chương 3 - Đại số",
-                        level: 1,
-                    "disabled": true
-                    },{
-                    id: "§1. Phương trình bậc nhất hai ẩn",
-                        text: "§1. Phương trình bậc nhất hai ẩn",
-                        level: 2
-                    },{
-                    id: "§2. Hệ hai phương trình bậc nhất hai ẩn",
-                        text: "§2. Hệ hai phương trình bậc nhất hai ẩn",
-                        level: 2
-                    },{
-                    id: "§3. Giải hệ phương trình bằng PP thế",
-                        text: "§3. Giải hệ phương trình bằng PP thế",
-                        level: 2
-                    },{
-                    id: "§4. Giải hệ phương trình bằng PP cộng đại số",
-                        text: "§4. Giải hệ phương trình bằng PP cộng đại số",
-                        level: 2
-                    },{
-                    id: "§5. Giải bài toán bằng cách lập phương trình",
-                        text: "§5. Giải bài toán bằng cách lập phương trình",
-                        level: 2
-                    },{
-                    id: "§5. Giải bài toán bằng cách lập phương trình (tiếp)",
-                        text: "§5. Giải bài toán bằng cách lập phương trình (tiếp)",
-                        level: 2
-                    },{
-                    id: "Chương 4 - Đại số",
-                        text: "Chương 4 - Đại số",
-                        level: 1,
-                    "disabled": true
-                    },{
-                    id: "§1. Hàm số y = ax2 (a #0)",
-                        text: "§1. Hàm số y = ax2 (a #0)",
-                        level: 2
-                    },{
-                    id: "§2. Đồ thị hàm số y = ax2 (a #0)",
-                        text: "§2. Đồ thị hàm số y = ax2 (a #0)",
-                        level: 2
-                    },{
-                    id: "§3. Phương trình bậc hai một ẩn số",
-                        text: "§3. Phương trình bậc hai một ẩn số",
-                        level: 2
-                    },{
-                    id: "§4. Công thức nghiệm của phương trình bậc hai",
-                        text: "§4. Công thức nghiệm của phương trình bậc hai",
-                        level: 2
-                    },{
-                    id: "§5. Công thức nghiệm thu gọn",
-                        text: "§5. Công thức nghiệm thu gọn",
-                        level: 2
-                    },{
-                    id: "§6. Hệ thức Vi-et và ứng dụng",
-                        text: "§6. Hệ thức Vi-et và ứng dụng",
-                        level: 2
-                    },{
-                    id: "§7. Phương trình quy về phương trình bậc hai",
-                        text: "§7. Phương trình quy về phương trình bậc hai",
-                        level: 2
-                    },{
-                    id: "§8. Giải bài toán bằng cách lập phương trình",
-                        text: "§8. Giải bài toán bằng cách lập phương trình",
-                        level: 2
-                    },{
-                    id: "Hình học",
-                        text: "Hình học",
-                        level: 0,
-                    "disabled": true
-                    },{
-                    id: "Chương 1 - Hình học",
-                        text: "Chương 1 - Hình học",
-                        level: 1,
-                    "disabled": true
-                    },{
-                    id: "§1. Một số hệ thức về đường cao trong tam giác vuông",
-                        text: "§1. Một số hệ thức về đường cao trong tam giác vuông",
-                        level: 2
-                    },{
-                    id: "§1. Một số hệ thức về cạnh và đường cao…. (tiếp)",
-                        text: "§1. Một số hệ thức về cạnh và đường cao…. (tiếp)",
-                        level: 2
-                    },{
-                    id: "§2. Tỉ số lượng giác của góc nhọn",
-                        text: "§2. Tỉ số lượng giác của góc nhọn",
-                        level: 2
-                    },{
-                    id: "§2. Tỉ số lượng giác của góc nhọn (tiếp)",
-                        text: "§2. Tỉ số lượng giác của góc nhọn (tiếp)",
-                        level: 2
-                    },{
-                    id: "§3. Sử dụng máy tính bỏ túi để tìm tỉ số lượng giác của góc",
-                        text: "§3. Sử dụng máy tính bỏ túi để tìm tỉ số lượng giác của góc",
-                        level: 2
-                    },{
-                    id: "§4. Một số hệ thức về cạnh và góc trong tam giác vuông",
-                        text: "§4. Một số hệ thức về cạnh và góc trong tam giác vuông",
-                        level: 2
-                    },{
-                    id: "§5. Ứng dụng thực tế các tỉ số lượng giác, thực hành ngoài trời",
-                        text: "§5. Ứng dụng thực tế các tỉ số lượng giác, thực hành ngoài trời",
-                        level: 2
-                    },{
-                    id: "Chương 2 - Hình học",
-                        text: "Chương 2 - Hình học",
-                        level: 1,
-                    "disabled": true
-                    },{
-                    id: "§1. Sự xác định của đường tròn.. T/C…",
-                        text: "§1. Sự xác định của đường tròn.. T/C…",
-                        level: 2
-                    },{
-                    id: "§2. Đường kính và dây của đường tròn",
-                        text: "§2. Đường kính và dây của đường tròn",
-                        level: 2
-                    },{
-                    id: "§3. Liên hệ giữa dây và khoảng cách từ tâm đến dây",
-                        text: "§3. Liên hệ giữa dây và khoảng cách từ tâm đến dây",
-                        level: 2
-                    },{
-                    id: "§4. Vị trí tương đối của đường thẳng và đường tròn",
-                        text: "§4. Vị trí tương đối của đường thẳng và đường tròn",
-                        level: 2
-                    },{
-                    id: "§5. Dấu hiệu nhận biết tiếp tuyến của đường tròn",
-                        text: "§5. Dấu hiệu nhận biết tiếp tuyến của đường tròn",
-                        level: 2
-                    },{
-                    id: "§6. Tính chất của hai tiếp tuyên cắt nhau",
-                        text: "§6. Tính chất của hai tiếp tuyên cắt nhau",
-                        level: 2
-                    },{
-                    id: "§7. Vị trí tương đối của hai đường tròn",
-                        text: "§7. Vị trí tương đối của hai đường tròn",
-                        level: 2
-                    },{
-                    id: "Chương 3 - Hình học",
-                        text: "Chương 3 - Hình học",
-                        level: 1,
-                    "disabled": true
-                    },{
-                    id: "§1. Góc ở tâm.Số đo cung",
-                        text: "§1. Góc ở tâm.Số đo cung",
-                        level: 2
-                    },{
-                    id: "§2. Liên hệ giữa cung và dây",
-                        text: "§2. Liên hệ giữa cung và dây",
-                        level: 2
-                    },{
-                    id: "§3. Góc nội tiếp",
-                        text: "§3. Góc nội tiếp",
-                        level: 2
-                    },{
-                    id: "§4. Góc tạo bởi tia tiếp tuyến và dây cung",
-                        text: "§4. Góc tạo bởi tia tiếp tuyến và dây cung",
-                        level: 2
-                    },{
-                    id: "§5. Góc có đỉnh ở bên trong hay bên ngoài đường tròn",
-                        text: "§5. Góc có đỉnh ở bên trong hay bên ngoài đường tròn",
-                        level: 2
-                    },{
-                    id: "§6. Cung chứa góc",
-                        text: "§6. Cung chứa góc",
-                        level: 2
-                    },{
-                    id: "§7. Tứ giác nội tiếp",
-                        text: "§7. Tứ giác nội tiếp",
-                        level: 2
-                    },{
-                    id: "§8. Đường tròn ngoại tiếp. Đường tròn nội tiếp",
-                        text: "§8. Đường tròn ngoại tiếp. Đường tròn nội tiếp",
-                        level: 2
-                    },{
-                    id: "§9. Độ dài đường tròn, cung tròn",
-                        text: "§9. Độ dài đường tròn, cung tròn",
-                        level: 2
-                    },{
-                    id: "§10. Diện tích hình tròn, hình quạt tròn",
-                        text: "§10. Diện tích hình tròn, hình quạt tròn",
-                        level: 2
-                    },{
-                    id: "Chương 4 - Hình học",
-                        text: "Chương 4 - Hình học",
-                        level: 1,
-                    "disabled": true
-                    },{
-                    id: "§1. Hình trụ, diện tích xung quanh và….",
-                        text: "§1. Hình trụ, diện tích xung quanh và….",
-                        level: 2
-                    },{
-                    id: "§2. Hình nón – hình nón cụt. Diện tích….",
-                        text: "§2. Hình nón – hình nón cụt. Diện tích….",
-                        level: 2
-                    },{
-                    id: "§3. Hình cầu, diện tích mặt cầu và thể tích hình cầu",
-                        text: "§3. Hình cầu, diện tích mặt cầu và thể tích hình cầu",
-                        level: 2
-                    }
-                ];
-
 
             let khu_vuc_data1 = [
                 {
@@ -421,19 +346,6 @@
                 },
             ];
 
-            $('.chuong_trinh_select').select2({
-                placeholder: 'Chọn chương trình',
-                width: "600px",
-                data: chuong_trinh_data,
-                formatSelection: function(item) {
-                    return item.text
-                },
-                formatResult: function(item) {
-                    return item.text
-                },
-                templateResult: formatResult,
-            });
-
             $('.khu_vuc_select1').select2({
                 placeholder: 'Chọn khu vực trên lớp:',
                 width: "600px",
@@ -461,8 +373,8 @@
             });
 
             $('#send').click(function(){
-               let chuong_trinh =  $('.chuong_trinh_select').val();
-
+               let chuong_trinh = $("input[name='chuong_trinh']:checked").val();
+alert(chuong_trinh);return;
                let khu_vuc =  $('.khu_vuc_select1').val();
                if(khu_vuc === '') khu_vuc =  $('.khu_vuc_select2').val();
 
