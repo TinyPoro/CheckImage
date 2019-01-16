@@ -257,7 +257,7 @@
             files = JSON.parse(files);
 
             $(".owl-carousel").owlCarousel({
-                items: 5,
+                items: 7,
                 vertical:true,
                 margin: 10
             });

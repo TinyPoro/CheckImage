@@ -1,4 +1,9 @@
 .wrap,.owl-carousel{
     width:100px;
-    height:480px;
+    height:680px;
+}
+
+.owl-carousel .owl-stage-outer {
+    overflow: hidden;
+    max-height: 680px;
 }
