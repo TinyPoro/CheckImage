@@ -34,23 +34,14 @@ class HomeController extends Controller
             $type = $request->get('type');
         }
 
-        $files = glob("/Applications/MAMP/htdocs/CheckImage/$type/*");
+        $files = glob("/var/www/html/$type/*");
 
         $chuong_trinh = config('chuong_trinh');
         $khu_vuc = config('khu_vuc');
 
         $files = array_map(function($file){
-            return str_ireplace('/Applications/MAMP/htdocs/CheckImage', 'http://localhost/CheckImage', $file);
+            return str_ireplace('/var/www/html', 'http://pro.data.giaingay.io', $file);
         }, $files);
-
-//        $files = glob("/var/www/html/$type/*");
-//
-//        $chuong_trinh = config('chuong_trinh');
-//        $khu_vuc = config('khu_vuc');
-//
-//        $files = array_map(function($file){
-//            return str_ireplace('/var/www/html', 'http://pro.data.giaingay.io', $file);
-//        }, $files);
 
         $total = $user->total;
 
