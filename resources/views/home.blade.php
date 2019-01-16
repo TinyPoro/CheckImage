@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container">
+    <b>Số lượt đánh giá hiện tại <span id="cur_check"></span>/{{$total}}</b>
+    <hr/>
     <div class="row">
         <div class="col-md-2">
             <div class="wrap">
@@ -262,6 +264,22 @@
                 $('#cur_img').attr("src", src);
             });
 
+            let update_cur_check = function () {
+                $.ajax({
+                    method: 'GET',
+                    url: "/CheckImage/public/cur_check",
+                    success: function(result){
+                        console.log(result);
+                        $('#cur_check').text(result);
+                    },
+                    error: function (jqXHR, exception) {
+                        console.log(exception);
+                    }
+                });
+            };
+
+            update_cur_check();
+
             function formatResult(node) {
                 let $result = $('<span id="'+node.id+'" style="padding-left:' + (20 * node.level) + 'px;">' + node.text + '</span>');
 
@@ -427,7 +445,9 @@
 
                             alert('Lưu thành công!');
 
-                            if(next_url) $('#cur_img').attr("src", next_url);;
+                            if(next_url) $('#cur_img').attr("src", next_url);
+
+                            update_cur_check();
                         }
                         else alert('Có lỗi xảy ra!');
                     },

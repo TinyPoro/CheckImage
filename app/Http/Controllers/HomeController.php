@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,11 +43,22 @@ class HomeController extends Controller
             return str_ireplace('/var/www/html', 'http://pro.data.giaingay.io', $file);
         }, $files);
 
+        $total = $user->total;
+
         return view('home', [
             'files' => $files,
             'chuong_trinh' => $chuong_trinh,
-            'khu_vuc' => $khu_vuc
+            'khu_vuc' => $khu_vuc,
+            'total' => $total
         ]);
+    }
+
+    public function getCheckNumber(){
+        $user = Auth::user();
+
+        if(!$user) return 0;
+
+        return \DB::table('check_image')->where('user_id', $user->id)->count();
     }
 
     public function post(Request $request){
