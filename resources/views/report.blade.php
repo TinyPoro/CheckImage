@@ -12,6 +12,7 @@
                 <th scope="col" colspan="8">Ngoài chương trình trên lớp	</th>
             </tr>
             <tr>
+                <th scope="col" rowspan="2">Không xác định</th>
                 <th scope="col" rowspan="2">SGK</th>
                 <th scope="col" rowspan="2">SBT</th>
                 <th scope="col" colspan="3">Độ khó tương đương trên lớp		</th>

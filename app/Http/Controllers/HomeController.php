@@ -184,16 +184,17 @@ class HomeController extends Controller
             ],
         ];
         $kinds = [
+            "Không xác định",
             "SGK",
             "SBT",
-            "Cô giao",
-            "Trung tâm học thêm",
-            "Sách tham khảo mua về",
-            "Cô giao",
-            "Trung tâm học thêm",
-            "Sách tham khảo mua về",
+            "Cô giao - Trên lớp",
+            "Trung tâm học thêm - Trên lớp",
+            "Sách tham khảo mua về - Trên lớp",
+            "Cô giao - Nâng cao thường",
+            "Trung tâm học thêm - Nâng cao thường",
+            "Sách tham khảo mua về - Nâng cao thường",
             "Lò luyện",
-            "Cô giao",
+            "Cô giao - Hệ chuyên",
         ];
         $values = [];
         foreach ($curriculums as $cur_key => $curriculum) {
