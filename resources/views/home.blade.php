@@ -399,9 +399,8 @@
 
                 $('input[type=radio][name="'+id+'"]').parent().show();
 
-                // $('.radio-inline').css('padding-left', '20px');
-                // $('label:hidden').parent('.radio-inline').css('padding-left', '0px');
-
+                $('.radio-inline').css('padding-left', '20px');
+                $('label:hidden').parent('.radio-inline').css('padding-left', '0px');
             });
 
 
