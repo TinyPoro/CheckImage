@@ -28,7 +28,7 @@ class SocialiteAuthController extends Controller
 
             $authUser = $this->findOrCreateUser($user, $provider);
             \Auth::login($authUser, true);
-            return redirect()->route('home1');
+            return redirect()->route('home');
         }catch (\Exception $e){
             dd($e->getMessage());
             return redirect()->route('home');
