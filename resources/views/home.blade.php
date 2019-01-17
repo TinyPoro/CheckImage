@@ -229,7 +229,7 @@
             <hr/>
 
             <div class="khu_vuc">
-                <div class="radio-inline">
+                <div class="radio-inline" >
                     <label><input type="radio" name="khu_vuc_radio" id="do_kho_khu_vuc_0">Không xác định</label>
                 </div><div class="radio-inline">
                     <label><input type="radio" name="khu_vuc_radio" id="do_kho_khu_vuc_1">Trong chương<br/> trình trên lớp</label>
