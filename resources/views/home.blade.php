@@ -437,6 +437,10 @@
                let ten_nguon = $('input[type=radio][name^="ten_nguon"]:checked').parent('label').text();
 
                let other =  $('[name="other"]').val();
+               if(!other){
+                   alert("Bạn không được bỏ trống trường 'Tại sao bạn nghĩ thế'!");
+                   return;
+               }
 
                let src = $('#cur_img').attr('src');
 
