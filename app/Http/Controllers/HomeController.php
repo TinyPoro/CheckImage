@@ -237,7 +237,7 @@ class HomeController extends Controller
             foreach ($kinds as $kind)
                 $count += $values[$cur_key . $kind];
         }
-        dd($count);
+        // dd($count);
 
         return view('report', ['curriculums' => $curriculums, "values" => $values, "kinds" => $kinds]);
     }
