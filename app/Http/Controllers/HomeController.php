@@ -119,9 +119,9 @@ class HomeController extends Controller
                 \DB::table('check_image')->where('src', $src)->where('user_id', $user->id)
                     ->update([
                         'chuong_trinh' => $chuong_trinh,
-                        'khu_vuc' => $khu_vuc,
-                        'do_kho' => $do_kho,
-                        'ten_nguon' => $ten_nguon,
+                        'khu_vuc' => $khu_vuc == null ? '' : $khu_vuc,
+                        'do_kho' => $do_kho == null ? '' : $do_kho,
+                        'ten_nguon' => $ten_nguon == null ? '' : $ten_nguon,
                         'other' => $other
                     ]);
             } else {
