@@ -407,7 +407,7 @@
 
                let khu_vuc = $('input[type=radio][name^="khu_vuc"]:checked').parent('label').text();
                let do_kho = $('input[type=radio][name^="do_kho"]:checked').parent('label').text();
-               let ten_nguon = $('input[type=radio][name^="khu_vuc"]:checked').parent('label').text();
+               let ten_nguon = $('input[type=radio][name^="ten_nguon"]:checked').parent('label').text();
 
                let other =  $('[name="other"]').val();
 
