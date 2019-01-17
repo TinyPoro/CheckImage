@@ -68,17 +68,35 @@ class HomeController extends Controller
 
         return view('home', [
             'files' => $files,
-            'total' => $total
+            'total' => $total,
+            'type' => $type,
+            'lop' => $lop,
+            'team' => $team
         ]);
     }
 
-    public function getCheckNumber()
+    public function getCheckNumber(Request $request)
     {
         $user = Auth::user();
 
         if (!$user) return 0;
 
-        return \DB::table('check_image')->where('user_id', $user->id)->count();
+        $type = 'app_giai_ngay';
+        if ($request->has('type')) {
+            $type = $request->get('type');
+        }
+
+        $lop = 'lop_9';
+        if ($request->has('lop')) {
+            $lop = $request->get('lop');
+        }
+
+        $team = 'team1';
+        if ($request->has('team')) {
+            $team = $request->get('team');
+        }
+
+        return \DB::table('check_image')->where('src', 'like', "http://pro.data.giaingay.io/$type/$lop/$team/%")->where('user_id', $user->id)->count();
     }
 
     public function post(Request $request)

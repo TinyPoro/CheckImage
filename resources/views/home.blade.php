@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="container">
+    <input type="hidden" id="type_value" value="{{$type}}">
+    <input type="hidden" id="lop_value" value="{{$lop}}">
+    <input type="hidden" id="team_value" value="{{$team}}">
+
     <div id="divLargerImage"></div>
 
     <div id="divOverlay"></div>
@@ -346,9 +350,20 @@
             });
 
             let update_cur_check = function () {
+                let type = $('input#type_value').val();
+                let lop = $('input#lop_value').val();
+                let team = $('input#team_value').val();
+
+                let data = {
+                    type: type,
+                    lop: lop,
+                    team: team,
+                };
+
                 $.ajax({
                     method: 'GET',
                     url: "/CheckImage/public/cur_check",
+                    data: data,
                     success: function(result){
                         $('#cur_check').text(result);
                     },
