@@ -55,7 +55,7 @@ class HomeController extends Controller
 
         $total = count($files);
 
-        $files = array_filter($files, function ($file){
+        $files = array_filter($files, function ($file) {
             return \DB::table('check_image')->where('src', $file['src'])->count() <= 9;
         });
 
@@ -105,9 +105,9 @@ class HomeController extends Controller
                 \DB::table('check_image')
                     ->insert([
                         'chuong_trinh' => $chuong_trinh,
-                        'khu_vuc' => $khu_vuc,
-                        'do_kho' => $do_kho,
-                        'ten_nguon' => $ten_nguon,
+                        'khu_vuc' => $khu_vuc == null ? '' : $khu_vuc,
+                        'do_kho' => $do_kho == null ? '' : $do_kho,
+                        'ten_nguon' => $ten_nguon == null ? '' : $ten_nguon,
                         'other' => $other,
                         'src' => $src,
                         'user_id' => $user->id
@@ -203,16 +203,16 @@ class HomeController extends Controller
         ];
         $kinds = [
             "Không xác định",
-            "SGK",
-            "SBT",
-            "Cô giao - Trên lớp",
-            "Trung tâm học thêm - Trên lớp",
-            "Sách tham khảo mua về - Trên lớp",
-            "Cô giao - Nâng cao thường",
-            "Trung tâm học thêm - Nâng cao thường",
-            "Sách tham khảo mua về - Nâng cao thường",
-            "Lò luyện",
-            "Cô giao - Hệ chuyên",
+            "Trong chương trình trên lớpSGK",
+            "Trong chương trình trên lớpSBT",
+            "Ngoài chương trình trên lớpĐộ khó tương đương trên lớpCô giao",
+            "Ngoài chương trình trên lớpĐộ khó tương đương trên lớpTrung tâm học thêm",
+            "Ngoài chương trình trên lớpĐộ khó tương đương trên lớpSách tham khảo mua về",
+            "Ngoài chương trình trên lớpNâng cao cho hệ thườngCô giao",
+            "Ngoài chương trình trên lớpNâng cao cho hệ thườngTrung tâm học thêm",
+            "Ngoài chương trình trên lớpNâng cao cho hệ thườngSách tham khảo mua về",
+            "Ngoài chương trình trên lớpHệ chuyênLò luyện",
+            "Ngoài chương trình trên lớpHệ chuyênCô giao",
         ];
         $values = [];
         foreach ($curriculums as $cur_key => $curriculum) {
@@ -223,7 +223,8 @@ class HomeController extends Controller
                     $values[$cur_key . $cha_key . $kind] = 0;
                 foreach ($chapter as $lesson) {
                     foreach ($kinds as $kind) {
-                        $values[$cur_key . $cha_key . $lesson . $kind] = \DB::table('check_image')->where('chuong_trinh', $lesson)->where('khu_vuc', $kind)->count();
+                        // dd("concat(khu_vuc,concat(do_kho,ten_nguon))='" . $kind . "'");
+                        $values[$cur_key . $cha_key . $lesson . $kind] = \DB::table('check_image')->where('chuong_trinh', $lesson)->whereRaw("concat(khu_vuc,concat(do_kho,ten_nguon))='" . $kind . "'")->count();
                         $values[$cur_key . $cha_key . $kind] += $values[$cur_key . $cha_key . $lesson . $kind];
                     }
                 }
@@ -236,7 +237,8 @@ class HomeController extends Controller
             foreach ($kinds as $kind)
                 $count += $values[$cur_key . $kind];
         }
-        // dd($count);
+        dd($count);
+
         return view('report', ['curriculums' => $curriculums, "values" => $values, "kinds" => $kinds]);
     }
 }
