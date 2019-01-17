@@ -12,8 +12,11 @@
         <div class="col-md-2">
             <div class="wrap">
                 <div class="owl-carousel">
-                    @foreach($files as $k => $file)
-                        <img id="{{$k}}" src="{{$file}}" style="width: 100%;height: 100%">
+                    @foreach($files as $file)
+                        <span>
+                            <img id="{{$file['k']}}" src="{{$file['src']}}" style="width: 100%;height: 100%">
+                            <span class="badge badge-secondary">{{$file['k']}}</span>
+                        </span>
                     @endforeach
 
                 </div>
@@ -22,7 +25,7 @@
         
         <div class="col-md-5">
             @if(key_exists(0, $files))
-                <img id="cur_img" src="{{$files[0]}}" style="width: 100%;height: 100%">
+                <img id="cur_img" src="{{$files[0]['src']}}" style="width: 100%;height: 100%">
             @endif
         </div>
 
@@ -322,11 +325,14 @@
         $(document).ready(async function(){
             let files = '<?php echo htmlspecialchars_decode(json_encode($files, JSON_UNESCAPED_UNICODE)); ?>';
             files = JSON.parse(files);
+            files = files.map(function(file){
+                return file.src;
+            });
 
             $(".owl-carousel").owlCarousel({
                 items: 7,
                 vertical:true,
-                margin: 10
+                margin: 15
             });
 
             $(".owl-carousel img").click(function () {

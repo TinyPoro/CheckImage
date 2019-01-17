@@ -45,3 +45,9 @@
 .ten_nguon label{
     display: none;
 }
+
+.badge{
+    position: relative;
+    left: 4rem;
+    bottom: 1.4rem;
+}

@@ -18,6 +18,8 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+    private $k = 0;
+
     /**
      * Show the application dashboard.
      *
@@ -42,13 +44,19 @@ class HomeController extends Controller
         $files = glob("/var/www/html/$type/$lop/*");
 
         $files = array_map(function ($file) {
-            return str_ireplace('/var/www/html', 'http://pro.data.giaingay.io', $file);
+            $this->k++;
+
+            return [
+                'src' => str_ireplace('/var/www/html', 'http://pro.data.giaingay.io', $file),
+                'k' => $this->k
+            ];
+
         }, $files);
 
         $total = count($files);
 
         $files = array_filter($files, function ($file){
-            return \DB::table('check_image')->where('src', $file)->count() <= 9;
+            return \DB::table('check_image')->where('src', $file['src'])->count() <= 9;
         });
 
         $files = array_values($files);
