@@ -270,7 +270,7 @@
 
                 {{--tên nguồn ngoài tương đương lớp--}}
                 <div class="radio-inline">
-                    <label><input type="radio" name="ten_nguon_do_kho_1_khu_vuc_2" id="ten_nguon_1_do_kho_1_khu_vuc_2">Cô giáo
+                    <label><input type="radio" name="ten_nguon_do_kho_1_khu_vuc_2" id="ten_nguon_1_do_kho_1_khu_vuc_2">Cô giao
                     </label>
                 </div>
                 <div class="radio-inline">
@@ -284,7 +284,7 @@
 
                 {{--tên nguồn nâng cao--}}
                 <div class="radio-inline">
-                    <label><input type="radio" name="ten_nguon_do_kho_2_khu_vuc_2" id="ten_nguon_1_do_kho_2_khu_vuc_2">Cô giáo
+                    <label><input type="radio" name="ten_nguon_do_kho_2_khu_vuc_2" id="ten_nguon_1_do_kho_2_khu_vuc_2">Cô giao
                     </label>
                 </div>
                 <div class="radio-inline">
@@ -430,7 +430,7 @@
                         console.log(result);
 
                         if(result === 'true') {
-                            $('.owl-item img[src="'+src+'"]').parent().remove();
+                            $('.owl-item img[src="'+src+'"]').parent().parent().remove();
 
                             let cur_index = files.indexOf(src);
 
@@ -441,15 +441,14 @@
                                 return value !== src;
                             });
 
-                            console.log(files);
-
                             alert('Lưu thành công!');
 
                             if(next_url) $('#cur_img').attr("src", next_url);
 
                             update_cur_check();
                         }
-                        else alert(result);
+                        else if(result === 'Giới hạn 10 người đánh giả 1 ảnh!' || result === 'no user login') alert(result);
+                        else alert("Thông tin bạn nhập không chính xác!");
                     },
                     error: function (jqXHR, exception) {
                         console.log(exception);
