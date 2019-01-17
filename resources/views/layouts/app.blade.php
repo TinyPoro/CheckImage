@@ -18,6 +18,7 @@
     <style>
         .radio-inline {
             vertical-align: top;
+            padding-left: 20px;
         }
     </style>
 </head>

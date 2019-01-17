@@ -231,7 +231,8 @@
             <div class="khu_vuc">
                 <div class="radio-inline" >
                     <label><input type="radio" name="khu_vuc_radio" id="do_kho_khu_vuc_0">Không xác định</label>
-                </div><div class="radio-inline">
+                </div>
+                <div class="radio-inline">
                     <label><input type="radio" name="khu_vuc_radio" id="do_kho_khu_vuc_1">Trong chương<br/> trình trên lớp</label>
                 </div>
                 <div class="radio-inline">
@@ -244,12 +245,10 @@
             <div class="do_kho">
                 {{--tên nguồn trong chương trình--}}
                 <div class="radio-inline">
-                    <label><input type="radio" name="do_kho_khu_vuc_1" id="ten_nguon_do_kho_1_khu_vuc_1">SGK
-                    </label>
+                    <label><input type="radio" name="do_kho_khu_vuc_1" id="ten_nguon_do_kho_1_khu_vuc_1">SGK</label>
                 </div>
                 <div class="radio-inline">
-                    <label><input type="radio" name="do_kho_khu_vuc_1" id="ten_nguon_do_kho_2_khu_vuc_1">SBT
-                    </label>
+                    <label><input type="radio" name="do_kho_khu_vuc_1" id="ten_nguon_do_kho_2_khu_vuc_1">SBT</label>
                 </div>
 
                 <div class="radio-inline">
@@ -270,40 +269,32 @@
 
                 {{--tên nguồn ngoài tương đương lớp--}}
                 <div class="radio-inline">
-                    <label><input type="radio" name="ten_nguon_do_kho_1_khu_vuc_2" id="ten_nguon_1_do_kho_1_khu_vuc_2">Cô giao
-                    </label>
+                    <label><input type="radio" name="ten_nguon_do_kho_1_khu_vuc_2" id="ten_nguon_1_do_kho_1_khu_vuc_2">Cô giao</label>
                 </div>
                 <div class="radio-inline">
-                    <label><input type="radio" name="ten_nguon_do_kho_1_khu_vuc_2" id="ten_nguon_2_do_kho_1_khu_vuc_2">Trung tâm học thêm
-                    </label>
+                    <label><input type="radio" name="ten_nguon_do_kho_1_khu_vuc_2" id="ten_nguon_2_do_kho_1_khu_vuc_2">Trung tâm học thêm</label>
                 </div>
                 <div class="radio-inline">
-                    <label><input type="radio" name="ten_nguon_do_kho_1_khu_vuc_2" id="ten_nguon_3_do_kho_1_khu_vuc_2">Sách tham khảo <br/>mua về
-                    </label>
+                    <label><input type="radio" name="ten_nguon_do_kho_1_khu_vuc_2" id="ten_nguon_3_do_kho_1_khu_vuc_2">Sách tham khảo <br/>mua về</label>
                 </div>
 
                 {{--tên nguồn nâng cao--}}
                 <div class="radio-inline">
-                    <label><input type="radio" name="ten_nguon_do_kho_2_khu_vuc_2" id="ten_nguon_1_do_kho_2_khu_vuc_2">Cô giao
-                    </label>
+                    <label><input type="radio" name="ten_nguon_do_kho_2_khu_vuc_2" id="ten_nguon_1_do_kho_2_khu_vuc_2">Cô giao</label>
                 </div>
                 <div class="radio-inline">
-                    <label><input type="radio" name="ten_nguon_do_kho_2_khu_vuc_2" id="ten_nguon_2_do_kho_2_khu_vuc_2">Trung tâm học thêm
-                    </label>
+                    <label><input type="radio" name="ten_nguon_do_kho_2_khu_vuc_2" id="ten_nguon_2_do_kho_2_khu_vuc_2">Trung tâm học thêm</label>
                 </div>
                 <div class="radio-inline">
-                    <label><input type="radio" name="ten_nguon_do_kho_2_khu_vuc_2" id="ten_nguon_3_do_kho_2_khu_vuc_2">Sách tham khảo <br/>mua về
-                    </label>
+                    <label><input type="radio" name="ten_nguon_do_kho_2_khu_vuc_2" id="ten_nguon_3_do_kho_2_khu_vuc_2">Sách tham khảo <br/>mua về</label>
                 </div>
 
                 {{--tên nguồn chuyên--}}
                 <div class="radio-inline">
-                    <label><input type="radio" name="ten_nguon_do_kho_3_khu_vuc_2" id="ten_nguon_1_do_kho_3_khu_vuc_2">Lò luyện
-                    </label>
+                    <label><input type="radio" name="ten_nguon_do_kho_3_khu_vuc_2" id="ten_nguon_1_do_kho_3_khu_vuc_2">Lò luyện</label>
                 </div>
                 <div class="radio-inline">
-                    <label><input type="radio" name="ten_nguon_do_kho_3_khu_vuc_2" id="ten_nguon_2_do_kho_3_khu_vuc_2">Cô giao
-                    </label>
+                    <label><input type="radio" name="ten_nguon_do_kho_3_khu_vuc_2" id="ten_nguon_2_do_kho_3_khu_vuc_2">Cô giao</label>
                 </div>
             </div>
 
@@ -313,7 +304,7 @@
             <br/>
             <textarea rows="5" cols="83" name="other"></textarea>
             <hr/>
-            <button class="btn btn-primary" id="send" type="button">Đánh giá</button>
+            <button class="btn btn-primary" id="send" type="button" disabled="true">Đánh giá</button>
 
         </div>
     </div>
@@ -378,8 +369,20 @@
 
             $('input[type=radio]').change(function() {
                 let name = $(this).attr('name');
-
                 let id = $('input[type=radio][name="'+name+'"]:checked').attr('id');
+                let enable = (id === "do_kho_khu_vuc_0" || 
+                                id === "ten_nguon_do_kho_1_khu_vuc_1" || 
+                                id === "ten_nguon_do_kho_2_khu_vuc_1" || 
+                                id === "ten_nguon_1_do_kho_1_khu_vuc_2" || 
+                                id === "ten_nguon_2_do_kho_1_khu_vuc_2" || 
+                                id === "ten_nguon_3_do_kho_1_khu_vuc_2" || 
+                                id === "ten_nguon_1_do_kho_2_khu_vuc_2" || 
+                                id === "ten_nguon_2_do_kho_2_khu_vuc_2" || 
+                                id === "ten_nguon_3_do_kho_2_khu_vuc_2" || 
+                                id === "ten_nguon_1_do_kho_3_khu_vuc_2" || 
+                                id === "ten_nguon_2_do_kho_3_khu_vuc_2");
+
+                $('#send').prop('disabled', !enable);
 
                 $('input[type=radio][name="'+id+'"]').parent().parent().siblings().find('label').hide();
                 $('input[type=radio][name="'+id+'"]').parent().parent().siblings().find('input[type=radio]').prop('checked', false);
@@ -396,8 +399,8 @@
 
                 $('input[type=radio][name="'+id+'"]').parent().show();
 
-                $('.radio-inline').css('padding-left', '20px');
-                $('label:hidden').parent('.radio-inline').css('padding-left', '0px');
+                // $('.radio-inline').css('padding-left', '20px');
+                // $('label:hidden').parent('.radio-inline').css('padding-left', '0px');
 
             });
 
