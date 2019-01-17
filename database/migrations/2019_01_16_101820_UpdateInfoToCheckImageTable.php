@@ -14,8 +14,8 @@ class UpdateInfoToCheckImageTable extends Migration
     public function up()
     {
         Schema::table('check_image', function (Blueprint $table) {
-            $table->string('do_kho');
-            $table->string('ten_nguon');
+            $table->string('do_kho')->nullable();
+            $table->string('ten_nguon')->nullable();
         });
     }
 
