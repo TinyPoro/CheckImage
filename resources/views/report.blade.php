@@ -8,6 +8,7 @@
             <thead>
             <tr>
                 <th scope="col" rowspan="3" colspan="3">Khung chương trình Toán 9</th>
+                <th scope="col" rowspan="1"></th>
                 <th scope="col" colspan="2">Trong chương trình trên lớp</th>
                 <th scope="col" colspan="8">Ngoài chương trình trên lớp	</th>
             </tr>

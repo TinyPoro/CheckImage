@@ -314,7 +314,7 @@
             <br/>
             <textarea rows="5" cols="83" name="other"></textarea>
             <hr/>
-            <button class="btn btn-primary" id="send" type="button">Đánh giá</button>
+            <button class="btn btn-primary" id="send" type="button" disabled="true">Đánh giá</button>
 
         </div>
     </div>
@@ -379,8 +379,20 @@
 
             $('input[type=radio]').change(function() {
                 let name = $(this).attr('name');
-
                 let id = $('input[type=radio][name="'+name+'"]:checked').attr('id');
+                let enable = (id === "do_kho_khu_vuc_0" ||
+                                id === "ten_nguon_do_kho_1_khu_vuc_1" ||
+                                id === "ten_nguon_do_kho_2_khu_vuc_1" ||
+                                id === "ten_nguon_1_do_kho_1_khu_vuc_2" ||
+                                id === "ten_nguon_2_do_kho_1_khu_vuc_2" ||
+                                id === "ten_nguon_3_do_kho_1_khu_vuc_2" ||
+                                id === "ten_nguon_1_do_kho_2_khu_vuc_2" ||
+                                id === "ten_nguon_2_do_kho_2_khu_vuc_2" ||
+                                id === "ten_nguon_3_do_kho_2_khu_vuc_2" ||
+                                id === "ten_nguon_1_do_kho_3_khu_vuc_2" ||
+                                id === "ten_nguon_2_do_kho_3_khu_vuc_2");
+
+                $('#send').prop('disabled', !enable);
 
                 $('input[type=radio][name="'+id+'"]').parent().parent().siblings().find('label').hide();
                 $('input[type=radio][name="'+id+'"]').parent().parent().siblings().find('input[type=radio]').prop('checked', false);
@@ -399,7 +411,6 @@
 
                 $('.radio-inline').css('padding-left', '20px');
                 $('label:hidden').parent('.radio-inline').css('padding-left', '0px');
-
             });
 
 
