@@ -41,7 +41,12 @@ class HomeController extends Controller
             $lop = $request->get('lop');
         }
 
-        $files = glob("/var/www/html/$type/$lop/*");
+        $team = 'team1';
+        if ($request->has('team')) {
+            $team = $request->get('team');
+        }
+
+        $files = glob("/var/www/html/$type/$lop/$team/*");
 
         $files = array_map(function ($file) {
             $this->k++;
