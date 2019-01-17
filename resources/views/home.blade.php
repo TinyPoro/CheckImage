@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="container">
+    <input type="hidden" id="type_value" value="{{$type}}">
+    <input type="hidden" id="lop_value" value="{{$lop}}">
+    <input type="hidden" id="team_value" value="{{$team}}">
+
     <div id="divLargerImage"></div>
 
     <div id="divOverlay"></div>
@@ -229,14 +233,14 @@
             <hr/>
 
             <div class="khu_vuc">
-                <div class="radio-inline" >
-                    <label><input type="radio" name="khu_vuc_radio" id="do_kho_khu_vuc_0">Không xác định</label>
-                </div>
                 <div class="radio-inline">
                     <label><input type="radio" name="khu_vuc_radio" id="do_kho_khu_vuc_1">Trong chương<br/> trình trên lớp</label>
                 </div>
                 <div class="radio-inline">
                     <label><input type="radio" name="khu_vuc_radio" id="do_kho_khu_vuc_2">Ngoài chương<br/> trình trên lớp</label>
+                </div>
+                <div class="radio-inline" >
+                    <label><input type="radio" name="khu_vuc_radio" id="do_kho_khu_vuc_0">Không xác định</label>
                 </div>
             </div>
 
@@ -244,20 +248,22 @@
 
             <div class="do_kho">
                 {{--tên nguồn trong chương trình--}}
-                <div class="radio-inline">
-                    <label><input type="radio" name="do_kho_khu_vuc_1" id="ten_nguon_do_kho_1_khu_vuc_1">SGK</label>
+                <div class="radio-inline" style="position: relative;left: 1rem;">
+                    <label><input type="radio" name="do_kho_khu_vuc_1" id="ten_nguon_do_kho_1_khu_vuc_1">SGK
+                    </label>
                 </div>
-                <div class="radio-inline">
-                    <label><input type="radio" name="do_kho_khu_vuc_1" id="ten_nguon_do_kho_2_khu_vuc_1">SBT</label>
+                <div class="radio-inline" style="position: relative;left: 1rem;">
+                    <label><input type="radio" name="do_kho_khu_vuc_1" id="ten_nguon_do_kho_2_khu_vuc_1">SBT
+                    </label>
                 </div>
 
-                <div class="radio-inline">
+                <div class="radio-inline" style="position: relative;left: 12rem;">
                     <label><input type="radio" name="do_kho_khu_vuc_2" id="ten_nguon_do_kho_1_khu_vuc_2">Độ khó tương <br/>đương trên lớp</label>
                 </div>
-                <div class="radio-inline">
+                <div class="radio-inline" style="position: relative;left: 12rem;">
                     <label><input type="radio" name="do_kho_khu_vuc_2" id="ten_nguon_do_kho_2_khu_vuc_2">Nâng cao cho <br/>hệ thường</label>
                 </div>
-                <div class="radio-inline">
+                <div class="radio-inline" style="position: relative;left: 12rem;">
                     <label><input type="radio" name="do_kho_khu_vuc_2" id="ten_nguon_do_kho_3_khu_vuc_2">Hệ chuyên</label>
                 </div>
             </div>
@@ -268,33 +274,41 @@
 
 
                 {{--tên nguồn ngoài tương đương lớp--}}
-                <div class="radio-inline">
-                    <label><input type="radio" name="ten_nguon_do_kho_1_khu_vuc_2" id="ten_nguon_1_do_kho_1_khu_vuc_2">Cô giao</label>
+                <div class="radio-inline" style="position: relative;left: 16.5rem;">
+                    <label><input type="radio" name="ten_nguon_do_kho_1_khu_vuc_2" id="ten_nguon_1_do_kho_1_khu_vuc_2">Cô giao
+                    </label>
                 </div>
-                <div class="radio-inline">
-                    <label><input type="radio" name="ten_nguon_do_kho_1_khu_vuc_2" id="ten_nguon_2_do_kho_1_khu_vuc_2">Trung tâm học thêm</label>
+                <div class="radio-inline" style="position: relative;left: 16.5rem;">
+                    <label><input type="radio" name="ten_nguon_do_kho_1_khu_vuc_2" id="ten_nguon_2_do_kho_1_khu_vuc_2">Trung tâm học thêm
+                    </label>
                 </div>
-                <div class="radio-inline">
-                    <label><input type="radio" name="ten_nguon_do_kho_1_khu_vuc_2" id="ten_nguon_3_do_kho_1_khu_vuc_2">Sách tham khảo <br/>mua về</label>
+                <div class="radio-inline" style="position: relative;left: 16.5rem;">
+                    <label><input type="radio" name="ten_nguon_do_kho_1_khu_vuc_2" id="ten_nguon_3_do_kho_1_khu_vuc_2">Sách tham khảo <br/>mua về
+                    </label>
                 </div>
 
                 {{--tên nguồn nâng cao--}}
-                <div class="radio-inline">
-                    <label><input type="radio" name="ten_nguon_do_kho_2_khu_vuc_2" id="ten_nguon_1_do_kho_2_khu_vuc_2">Cô giao</label>
+                <div class="radio-inline" style="position: relative;left: 26.5rem;">
+                    <label><input type="radio" name="ten_nguon_do_kho_2_khu_vuc_2" id="ten_nguon_1_do_kho_2_khu_vuc_2">Cô giao
+                    </label>
                 </div>
-                <div class="radio-inline">
-                    <label><input type="radio" name="ten_nguon_do_kho_2_khu_vuc_2" id="ten_nguon_2_do_kho_2_khu_vuc_2">Trung tâm học thêm</label>
+                <div class="radio-inline" style="position: relative;left: 26.5rem;">
+                    <label><input type="radio" name="ten_nguon_do_kho_2_khu_vuc_2" id="ten_nguon_2_do_kho_2_khu_vuc_2">Trung tâm học thêm
+                    </label>
                 </div>
-                <div class="radio-inline">
-                    <label><input type="radio" name="ten_nguon_do_kho_2_khu_vuc_2" id="ten_nguon_3_do_kho_2_khu_vuc_2">Sách tham khảo <br/>mua về</label>
+                <div class="radio-inline" style="position: relative;left: 26.5rem;">
+                    <label><input type="radio" name="ten_nguon_do_kho_2_khu_vuc_2" id="ten_nguon_3_do_kho_2_khu_vuc_2">Sách tham khảo <br/>mua về
+                    </label>
                 </div>
 
                 {{--tên nguồn chuyên--}}
-                <div class="radio-inline">
-                    <label><input type="radio" name="ten_nguon_do_kho_3_khu_vuc_2" id="ten_nguon_1_do_kho_3_khu_vuc_2">Lò luyện</label>
+                <div class="radio-inline" style="position: relative;left: 34.5rem;">
+                    <label><input type="radio" name="ten_nguon_do_kho_3_khu_vuc_2" id="ten_nguon_1_do_kho_3_khu_vuc_2">Lò luyện
+                    </label>
                 </div>
-                <div class="radio-inline">
-                    <label><input type="radio" name="ten_nguon_do_kho_3_khu_vuc_2" id="ten_nguon_2_do_kho_3_khu_vuc_2">Cô giao</label>
+                <div class="radio-inline" style="position: relative;left: 34.5rem;">
+                    <label><input type="radio" name="ten_nguon_do_kho_3_khu_vuc_2" id="ten_nguon_2_do_kho_3_khu_vuc_2">Cô giao
+                    </label>
                 </div>
             </div>
 
@@ -336,9 +350,20 @@
             });
 
             let update_cur_check = function () {
+                let type = $('input#type_value').val();
+                let lop = $('input#lop_value').val();
+                let team = $('input#team_value').val();
+
+                let data = {
+                    type: type,
+                    lop: lop,
+                    team: team,
+                };
+
                 $.ajax({
                     method: 'GET',
                     url: "/CheckImage/public/cur_check",
+                    data: data,
                     success: function(result){
                         $('#cur_check').text(result);
                     },
@@ -370,16 +395,16 @@
             $('input[type=radio]').change(function() {
                 let name = $(this).attr('name');
                 let id = $('input[type=radio][name="'+name+'"]:checked').attr('id');
-                let enable = (id === "do_kho_khu_vuc_0" || 
-                                id === "ten_nguon_do_kho_1_khu_vuc_1" || 
-                                id === "ten_nguon_do_kho_2_khu_vuc_1" || 
-                                id === "ten_nguon_1_do_kho_1_khu_vuc_2" || 
-                                id === "ten_nguon_2_do_kho_1_khu_vuc_2" || 
-                                id === "ten_nguon_3_do_kho_1_khu_vuc_2" || 
-                                id === "ten_nguon_1_do_kho_2_khu_vuc_2" || 
-                                id === "ten_nguon_2_do_kho_2_khu_vuc_2" || 
-                                id === "ten_nguon_3_do_kho_2_khu_vuc_2" || 
-                                id === "ten_nguon_1_do_kho_3_khu_vuc_2" || 
+                let enable = (id === "do_kho_khu_vuc_0" ||
+                                id === "ten_nguon_do_kho_1_khu_vuc_1" ||
+                                id === "ten_nguon_do_kho_2_khu_vuc_1" ||
+                                id === "ten_nguon_1_do_kho_1_khu_vuc_2" ||
+                                id === "ten_nguon_2_do_kho_1_khu_vuc_2" ||
+                                id === "ten_nguon_3_do_kho_1_khu_vuc_2" ||
+                                id === "ten_nguon_1_do_kho_2_khu_vuc_2" ||
+                                id === "ten_nguon_2_do_kho_2_khu_vuc_2" ||
+                                id === "ten_nguon_3_do_kho_2_khu_vuc_2" ||
+                                id === "ten_nguon_1_do_kho_3_khu_vuc_2" ||
                                 id === "ten_nguon_2_do_kho_3_khu_vuc_2");
 
                 $('#send').prop('disabled', !enable);
@@ -412,6 +437,10 @@
                let ten_nguon = $('input[type=radio][name^="ten_nguon"]:checked').parent('label').text();
 
                let other =  $('[name="other"]').val();
+               if(!other){
+                   alert("Bạn không được bỏ trống trường 'Tại sao bạn nghĩ thế'!");
+                   return;
+               }
 
                let src = $('#cur_img').attr('src');
 
