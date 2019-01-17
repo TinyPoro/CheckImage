@@ -6,7 +6,7 @@
 
     <div id="divOverlay"></div>
 
-    <b>Số lượt đánh giá hiện tại <span id="cur_check"></span>/{{count($files)}}</b>
+    <b>Số lượt đánh giá hiện tại <span id="cur_check"></span>/{{$total}}</b>
     <hr/>
     <div class="row">
         <div class="col-md-2">
