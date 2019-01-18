@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home?type=app_giai_ngay&team=team1', 'HomeController@index')->name('home1');
 Route::get('/report', 'HomeController@report')->name('report');
+Route::get('/report/summary', 'HomeController@reportSummary')->name('report_summary');
 
 Route::post('/post', 'HomeController@post')->name('post');
 Route::get('/cur_check', 'HomeController@getCheckNumber')->name('cur_check');
