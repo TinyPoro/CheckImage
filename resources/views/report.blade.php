@@ -32,6 +32,12 @@
             </tr>
             </thead>
             <tbody>
+            <tr>
+                <th scope="row" colspan="3">Không xác định</th>
+                @foreach($kinds as $kind)
+                <td style="background-color:#bcffb7">{{$values['Không xác định'.$kind]}}</td>
+                @endforeach
+            </tr>
             @foreach($curriculums as $cur_key => $curriculum)
             <tr>
                 <th scope="row" colspan="3">{{$cur_key}}</th>

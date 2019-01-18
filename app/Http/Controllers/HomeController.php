@@ -206,7 +206,7 @@ class HomeController extends Controller
                     "§7. Vị trí tương đối của hai đường tròn"
                 ],
                 'Chương III' => [
-                    "§1. Góc ở tâm.. Số đo cung",
+                    "§1. Góc ở tâm.Số đo cung",
                     "§2. Liên hệ giữa cung và dây",
                     "§3. Góc nội tiếp",
                     "§4. Góc tạo bởi tia tiếp tuyến và dây cung",
@@ -255,11 +255,16 @@ class HomeController extends Controller
                     $values[$cur_key . $kind] += $values[$cur_key . $cha_key . $kind];
             }
         }
+        foreach ($kinds as $kind)
+            $values['Không xác định' . $kind] = \DB::table('check_image')->where('chuong_trinh', 'Không xác định')->whereRaw("concat(khu_vuc,concat(do_kho,ten_nguon))='" . $kind . "'")->count();
+
         $count = 0;
         foreach ($curriculums as $cur_key => $curriculum) {
             foreach ($kinds as $kind)
                 $count += $values[$cur_key . $kind];
         }
+        foreach ($kinds as $kind)
+            $count += $values['Không xác định' . $kind];
         // dd($count);
 
         return view('report', ['curriculums' => $curriculums, "values" => $values, "kinds" => $kinds]);
